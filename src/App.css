@@ -1,6 +1,8 @@
 
 .container {
+  display: flex;
   min-height: 60vh;
   margin-bottom: 5em;
+justify-content: center;
 
 }

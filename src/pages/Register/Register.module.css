@@ -1,0 +1,37 @@
+.register_box {
+    width: 50vw;
+height: 50vh;
+}
+
+.forms_register {
+    
+    display: flex;
+    flex-direction: column;
+    padding: 2em 1em;
+    justify-content: center;
+}
+
+.labels {
+
+    text-align: center;
+    margin: .2em .2em;
+}
+.labels input {
+    margin: .2em;
+  
+
+
+}
+.submit_box {
+    height: 5em;
+    align-items: center;
+    display: flex;
+    justify-content: center ;
+}
+
+span {
+
+    margin: 4px;
+    color: black;
+}
+

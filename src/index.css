@@ -25,6 +25,13 @@ body {
   height: 100vh;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: inherit;
+}
+
 a , nav button {
   font-weight: 500;
   color: #303030;
@@ -47,10 +54,10 @@ h1 {
   line-height: 1.1;
 }
 
-/*
+
 input::placeholder , textarea::placeholder {
-  
-} */
+  font-family: 'Poppins', sans-serif;
+} 
  
 
 input:focus , textarea:focus {
