@@ -1,3 +1,37 @@
-.navbars {
-    background-color: red;
+.navbar {
+    box-shadow: rgba(0,0,0,0.15) 0px -2px 10px 0px;
+    display: flex;
+    
+    align-items: center;
+  justify-content: space-between;
+  padding: .5em 2em;
+}
+
+.brand  {
+  font-size: 1.2em;
+}
+
+.brand span {
+font-weight: 900;
+text-transform: uppercase;
+}
+
+.navlinks {
+    display: flex;
+    list-style: none;
+justify-content: center;
+
+  margin-right: 1em;
+}
+
+
+.navlinks li a {
+    margin: .4em .6em;
+    padding: .2em .2em;
+
+}
+.active {
+  background-color: rgb(143, 143, 143);
+  border-radius: 2px;
+  color: white;
 }
