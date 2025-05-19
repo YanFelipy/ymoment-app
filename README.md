@@ -1,3 +1,3 @@
-Mini Blog App
+Your Moment App
 
 Criação e descrição do projeto em breve.
