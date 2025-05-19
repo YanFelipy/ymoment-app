@@ -2,6 +2,7 @@ import styles from './Register.module.css'
 
 import { useState, useEffect } from 'react'
 
+import { UseChangeTitle } from '../../hooks/useChangeTitle.jsx'
 
 const Register = () => {
 
@@ -24,7 +25,7 @@ const Register = () => {
 
   }
 
-
+UseChangeTitle("Cadastre-se")
   return (
     <div className={styles.register_box} >
       <div className={styles.title_register}>

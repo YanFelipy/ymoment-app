@@ -1,6 +1,9 @@
 import styles from './Login.module.css'
+import { UseChangeTitle } from '../../hooks/useChangeTitle.jsx'
 
 const Login = () => {
+UseChangeTitle("Entrar")
+
   return (
     <div>
         <h2>
