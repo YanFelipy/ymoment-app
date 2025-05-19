@@ -6,3 +6,12 @@
 justify-content: center;
 
 }
+
+
+
+@media only screen and (min-width: 0px)
+and (max-width: 820px) {
+  .container {
+margin-bottom: 0px;
+  }
+}

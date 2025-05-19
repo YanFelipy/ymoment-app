@@ -20,8 +20,8 @@ text-transform: uppercase;
     display: flex;
     list-style: none;
 justify-content: center;
-
-  margin-right: 1em;
+ margin-right: 1em;
+ 
 }
 
 
@@ -34,4 +34,11 @@ justify-content: center;
   background-color: rgb(143, 143, 143);
   border-radius: 2px;
   color: white;
+}
+
+@media only screen and (min-width: 0px)
+and (max-width: 667px) {
+  .navlinks a {
+ display: none;
+  }
 }

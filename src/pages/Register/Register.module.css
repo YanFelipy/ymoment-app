@@ -1,37 +1,53 @@
 .register_box {
-    width: 50vw;
+width: 60vw;
 height: 50vh;
-}
+display: flex;
+flex-direction: column;
 
-.forms_register {
-    
-    display: flex;
-    flex-direction: column;
-    padding: 2em 1em;
-    justify-content: center;
-}
-
-.labels {
-
-    text-align: center;
-    margin: .2em .2em;
-}
-.labels input {
-    margin: .2em;
-  
-
+text-align: left;
 
 }
+
 .submit_box {
     height: 5em;
     align-items: center;
     display: flex;
-    justify-content: center ;
-}
-
-span {
-
-    margin: 4px;
+    justify-content: center;
     color: black;
 }
 
+.title_register {
+  margin: 0 auto;
+  min-width: 50%;
+}
+
+.title_register h2 {
+margin-bottom: 5px;
+}
+.title_register p {
+    font-size: .8em;
+    margin-top: 2px;
+    color: var(--second-color);
+}
+
+.submit_box input {
+    width: 120px;
+    height: 45px;
+    border-width: 1px;
+    color: rgb(255, 255, 255);
+    border-color: rgba(185, 185, 185, 1);
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    box-shadow: 0px 10px 14px -7px rgba(255, 255, 255, 1);
+    text-shadow: 0px 1px 0px rgba(67, 68, 68, 1);
+    background: rgb(150, 150, 150);
+}
+
+.submit_box input:hover {
+    background: rgba(214, 214, 214, 1);
+    cursor: pointer;
+
+}
