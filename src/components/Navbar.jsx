@@ -5,7 +5,7 @@ const Navbar = () => {
     <nav className={styles.navbar} >
       
       <NavLink to="/" className={styles.brand}>
-        y<span>Moment</span>
+        y<span>Moments</span>
       </NavLink>
 
       <ul className={styles.navlinks}>
