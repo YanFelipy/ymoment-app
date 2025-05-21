@@ -9,6 +9,7 @@ text-align: left;
 }
 
 .submit_box {
+    padding: 10px 3px;
     height: 5em;
     align-items: center;
     display: flex;

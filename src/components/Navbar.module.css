@@ -9,12 +9,36 @@
 
 .brand  {
   font-size: 1.2em;
+
+
 }
 
 .brand span {
 font-weight: 900;
+background: radial-gradient(circle,dodgerblue,rgb(2, 202, 216));
+background-clip:text;
+color: transparent;
 text-transform: uppercase;
+animation: moments 5s linear infinite ;
+background-size: 300% 300%;
 }
+
+@keyframes moments {
+  0% {
+    background-position: 0% 0%;
+  }
+ 50% {
+    background-position: 100% 100%;
+  }
+   0% {
+    background-position: 0% 0%;
+  }
+}
+  .brand span:hover {
+background:none;
+color: var(--second-color);
+  }
+
 
 .navlinks {
     display: flex;
@@ -30,11 +54,18 @@ justify-content: center;
     padding: .2em .2em;
 
 }
+
+.navlinks li a:hover, 
 .active {
-  background-color: rgb(143, 143, 143);
-  border-radius: 2px;
-  color: white;
+
+background: radial-gradient(circle,dodgerblue,rgb(2, 202, 216));
+background-clip:text;
+color: transparent;
+animation: moments 2s linear infinite ;
+background-size: 300% 300%;
+
 }
+
 
 @media only screen and (min-width: 0px)
 and (max-width: 667px) {
