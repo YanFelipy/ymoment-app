@@ -1,75 +1,77 @@
 .navbar {
-    box-shadow: rgba(0,0,0,0.15) 0px -2px 10px 0px;
-    display: flex;
-    
-    align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px -2px 10px 0px;
+  display: flex;
+
+  align-items: center;
   justify-content: space-between;
   padding: .5em 2em;
 }
 
-.brand  {
+.brand {
   font-size: 1.2em;
 
 
 }
 
 .brand span {
-font-weight: 900;
-background: radial-gradient(circle,dodgerblue,rgb(2, 202, 216));
-background-clip:text;
-color: transparent;
-text-transform: uppercase;
-animation: moments 5s linear infinite ;
-background-size: 300% 300%;
+  font-weight: 900;
+  background: radial-gradient(circle, dodgerblue, rgb(2, 202, 216));
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+  animation: moments 5s linear infinite;
+  background-size: 300% 300%;
 }
 
 @keyframes moments {
   0% {
     background-position: 0% 0%;
   }
- 50% {
+
+  50% {
     background-position: 100% 100%;
   }
-   0% {
+
+  0% {
     background-position: 0% 0%;
   }
 }
-  .brand span:hover {
-background:none;
-color: var(--second-color);
-  }
+
+.brand span:hover {
+  background: none;
+  color: var(--second-color);
+}
 
 
 .navlinks {
-    display: flex;
-    list-style: none;
-justify-content: center;
- margin-right: 1em;
- 
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin-right: 1em;
+
 }
 
 
 .navlinks li a {
-    margin: .4em .6em;
-    padding: .2em .2em;
+  margin: .4em .6em;
+  padding: .2em .2em;
 
 }
 
-.navlinks li a:hover, 
+.navlinks li a:hover,
 .active {
 
-background: radial-gradient(circle,dodgerblue,rgb(2, 202, 216));
-background-clip:text;
-color: transparent;
-animation: moments 2s linear infinite ;
-background-size: 300% 300%;
+  background: radial-gradient(circle, dodgerblue, rgb(2, 202, 216));
+  background-clip: text;
+  color: transparent;
+  animation: moments 2s linear infinite;
+  background-size: 300% 300%;
 
 }
 
 
-@media only screen and (min-width: 0px)
-and (max-width: 667px) {
+@media only screen and (min-width: 0px) and (max-width: 667px) {
   .navlinks a {
- display: none;
+    display: none;
   }
 }
