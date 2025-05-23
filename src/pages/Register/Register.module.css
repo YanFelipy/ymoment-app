@@ -1,9 +1,16 @@
 .register_box {
-    width: 60vw;
-    height: 50vh;
+    margin-top: 40px;
+    width: 500px;
+    height: 600px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: left;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+ -webkit-box-shadow: 0px 0px 10px .2px  rgb(0, 235, 196), 10px 0px 10px .2px #0793ff, 10px 0px 10px .2px rgba(0,0,0,0); 
+    box-shadow: -5px 0px 10px .3px #03acfa , 0px 0px 10px 5px  rgb(2, 216, 187), 5px 0px 10px 10px rgba(0,0,0,0);
 
 }
 
@@ -12,17 +19,20 @@
     height: 5em;
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     color: black;
 }
 
 .title_register {
     margin: 0 auto;
-    min-width: 50%;
+    min-width: 60%;
 }
 
 .title_register h2 {
     margin-bottom: 5px;
+    color: black;
+    font-weight: 600;
 }
 
 .title_register p {
@@ -61,6 +71,15 @@
   color: rgb(255, 255, 255);
 }
 
+.submit_box .simple_btn{
+    color: rgb(53, 145, 238);
+    background: transparent ;
+   padding: 10px;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+
+}
 .error {
     display: flex;
     justify-content: center;
@@ -69,7 +88,7 @@
 
 .error p {
     color: #ffffff;
-    background-color: #ff6b6bbb;
+    background-color: #fd3f3fbb;
     border: 1px solid #b3b3b3c5;
     padding: 8px;
     font-size: .7em;
@@ -77,8 +96,6 @@
     border-radius: 5px;
     animation: bounce 7s ease forwards;
 }
-
-
 
 
 @keyframes moments {

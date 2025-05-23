@@ -24,13 +24,10 @@ body {
 .app {
   width: 100vw;
   height: 100vh;
-}
-
-.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: inherit;
+  justify-content: space-between;
+
 }
 
 a,
@@ -64,6 +61,7 @@ h1 {
 form {
   margin: 0 auto;
   min-width: 50%;
+  width: 60%;
   padding: 25px 0px;
 
 }
@@ -84,6 +82,8 @@ label input {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
+
+
 
 input,
 textarea {
@@ -111,6 +111,7 @@ input:focus,
 textarea:focus {
   outline: none;
 }
+
 
 .btn {
   background-color: green;
@@ -145,10 +146,7 @@ border: 1px solid #000;
 
 .btn.btn-danger:hover {background-color: red;}
 
-input [disabled] {
-  background: radial-gradient(circle, rgb(107, 107, 107), rgb(206, 206, 206));
-  color: black;
-}
+
 
 button [disabled] {
   background: radial-gradient(circle, rgb(107, 107, 107), rgb(206, 206, 206));
