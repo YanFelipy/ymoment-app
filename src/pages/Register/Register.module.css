@@ -1,10 +1,9 @@
 .register_box {
-width: 60vw;
-height: 50vh;
-display: flex;
-flex-direction: column;
-
-text-align: left;
+    width: 60vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
 
 }
 
@@ -18,13 +17,14 @@ text-align: left;
 }
 
 .title_register {
-  margin: 0 auto;
-  min-width: 50%;
+    margin: 0 auto;
+    min-width: 50%;
 }
 
 .title_register h2 {
-margin-bottom: 5px;
+    margin-bottom: 5px;
 }
+
 .title_register p {
     font-size: .8em;
     margin-top: 2px;
@@ -35,20 +35,104 @@ margin-bottom: 5px;
     width: 120px;
     height: 45px;
     border-width: 1px;
-    color: rgb(255, 255, 255);
-    border-color: rgba(185, 185, 185, 1);
-    font-weight: bold;
+    border-color: rgb(214, 214, 214);
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     box-shadow: 0px 10px 14px -7px rgba(255, 255, 255, 1);
     text-shadow: 0px 1px 0px rgba(67, 68, 68, 1);
-    background: rgb(150, 150, 150);
+    background: radial-gradient(circle, dodgerblue, rgb(2, 202, 216));
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    animation: moments 5s linear infinite;
+    background-size: 300% 300%;
+
 }
 
 .submit_box input:hover {
-    background: rgba(214, 214, 214, 1);
     cursor: pointer;
+    background: radial-gradient(circle, rgb(53, 145, 238), rgba(0, 252, 168, 0.568));
+    animation: moments 10s ease infinite;
+}
+.submit_box .disabled_submit {
+  background: radial-gradient(circle, rgb(107, 107, 107), rgb(206, 206, 206));
+  color: rgb(255, 255, 255);
+}
 
+.error {
+    display: flex;
+    justify-content: center;
+
+}
+
+.error p {
+    color: #ffffff;
+    background-color: #ff6b6bbb;
+    border: 1px solid #b3b3b3c5;
+    padding: 8px;
+    font-size: .7em;
+    font-weight: 500;
+    border-radius: 5px;
+    animation: bounce 7s ease forwards;
+}
+
+
+
+
+@keyframes moments {
+    0% {
+        background-position: 0% 0%;
+
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    0% {
+        background-position: 0% 0%;
+    }
+}
+
+
+@keyframes bounce {
+    50% {
+        opacity: 100%;
+    }
+
+    70% {
+        opacity: 100%;
+    }
+
+
+    50% {
+        transform: translateY(0%);
+    }
+
+    80% {
+        transform: translateY(-15%);
+    }
+
+    90% {
+        transform: translateY(-20%);
+    }
+
+    95% {
+        transform: translateY(15%);
+    }
+
+    97% {
+        transform: translateY(7%);
+    }
+
+    99% {
+        transform: translateY(3%);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0%;
+    }
 }

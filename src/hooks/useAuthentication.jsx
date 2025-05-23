@@ -1,10 +1,10 @@
-import {db} from '../../firebase/config'
+import { db } from '../../firebase/config'
 import {
     getAuth,
-     createUserWithEmailAndPassword, 
+    createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     updateProfile,
-     signOut
+    signOut
 
 } from 'firebase/auth'
 
@@ -27,15 +27,18 @@ export const useAuthentication = () => {
         }
     }
 
-  const createUser = async (data) =>{
+    const createUser = async (data) => {
 
+        setError("")
         checkIsCancelled()
         setLoading(true)
 
+        //user create
+
         try {
 
-        const { user } =  await createUserWithEmailAndPassword (
-               auth,
+            const { user } = await createUserWithEmailAndPassword(
+                auth,
                 data.email,
                 data.pass,
             )
@@ -43,25 +46,48 @@ export const useAuthentication = () => {
             await updateProfile(user, { displayName: data.name }
 
             )
+            setLoading(false)
+
             return user
+
+            //errors
 
         } catch (error) {
             console.log(error.message)
             console.log(typeof error.message)
 
+            let systemErrorMessage
+
+            if (error.message.includes("Password")) {
+                systemErrorMessage = "A senha precisa ter mais de 6 caracteres"
+            }
+
+            else if (error.message.includes("(auth/email-already-in-use")) {
+                systemErrorMessage = "Este email já está sendo usado, insira outro!"
+            }
+            else if (error.message.includes("invalid-email)")) {
+                systemErrorMessage = "Email inválido, digite seu email corretamente"
+            }
+            else {
+                systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde"
+            }
+            setLoading(false)
+            setError(systemErrorMessage)
         }
 
-setLoading(false)
 
     }
 
-    useEffect(()=>{
-      return  setCancelled(true)
+
+    useEffect(() => {
+        return setCancelled(true)
     }, [])
 
-return {
-    auth, createUser, error, loading
+    return {
+        auth, createUser, error, loading,
+    }
+
 }
 
 
-}
+

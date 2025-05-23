@@ -14,7 +14,7 @@ const Register = () => {
   const [error, setError] = useState("")
 
 
-const { createUser, error : authError } = useAuthentication()
+  const { createUser, error: authError, loading } = useAuthentication()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -29,20 +29,27 @@ const { createUser, error : authError } = useAuthentication()
 
     if (pass !== confirmPass) {
       setError("As senhas precisam ser iguais!")
-    setPass('')
-    setConfirmPass('')
+      setPass('')
+      setConfirmPass('')
+      return
+    }
+    if (name.length < 3) {
+      setError("Nome inválido, digite um nome corretamente!")
       return
     }
 
-const res = await createUser(User)
-console.log(res)
-}
+    const res = await createUser(User)
+    console.log(res)
+  }
 
-useEffect(() => {
+
+
+  useEffect(() => {
     if (authError) {
       setError(authError);
     }
   }, [authError]);
+
 
   UseChangeTitle("Cadastre-se")
   return (
@@ -77,12 +84,17 @@ useEffect(() => {
           <input required placeholder="Digite sua senha novamente" name='confirm password' value={confirmPass} type='password' onChange={(e) => setConfirmPass(e.target.value)} />
         </label>
 
-
         <div className={styles.submit_box}>
-          <label className={styles.labels}>
-            <input type='submit' value="Cadastrar-se" />
-          </label>
 
+          {!loading &&
+            <label className={styles.labels}>
+              <input type='submit' value="Cadastrar-se" />
+            </label>
+          }
+
+          {loading && <label className={styles.labels}>
+            <input disabled type='submit' className={styles.disabled_submit} value="Aguarde..." />
+          </label>}
         </div>
 
         <div className={styles.error}>

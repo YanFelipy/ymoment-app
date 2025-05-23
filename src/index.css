@@ -80,7 +80,9 @@ label {
 
 label input {
   margin: .2em;
-  
+  color: #4b4b4b;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 }
 
 input,
@@ -143,17 +145,16 @@ border: 1px solid #000;
 
 .btn.btn-danger:hover {background-color: red;}
 
-button [disabled] {
-  background-color: #AAA;
+input [disabled] {
+  background: radial-gradient(circle, rgb(107, 107, 107), rgb(206, 206, 206));
+  color: black;
 }
 
-.container .error {
-  color: #721C24;
-background-color: #f8d7f8;
-border: 1px solid #f5c6cb;
-padding: 5px;
-border-radius: 5px;
+button [disabled] {
+  background: radial-gradient(circle, rgb(107, 107, 107), rgb(206, 206, 206));
+  color: black;
 }
+
 
 @media only screen and (min-width: 0px)
 and (max-width: 820px) {
