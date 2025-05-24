@@ -14,7 +14,7 @@ const Login = () => {
 
   return (
 
-    <div class={styles.login_box} >
+    <div className={styles.login_box} >
       <div className={styles.title_login}>
         <h2>
           Entrar
