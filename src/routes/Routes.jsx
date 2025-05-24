@@ -14,17 +14,24 @@ const RoutesPages = () => {
   
   return (
     <Routes>
-      {user && 
-<Route path='/' element={<Dashboard/>} />
-}
-      {!user && 
-        <Route path='/' element={<Login/>} />
-      }
-      <Route path='/About' element={<About />} />
+      
+<Route path='/' element={!user ?  
+<Login/> :<Dashboard/>
+
+} />
+<Route path='/login' element={user ?  
+<Dashboard/> :<Login
+/>
+}/>
+
+       <Route path='/Register' element={!user ?  
+ <Register/> : <Dashboard/>
+}/>
+
+<Route path='/About' element={<About />} />
 
 
-
-       <Route path='/Register' element={<Register/>} />
+ 
     </Routes>
 
   )

@@ -27,13 +27,13 @@ export const useAuthentication = () => {
         }
     }
 
+    //user create
     const createUser = async (data) => {
 
         setError("")
         checkIsCancelled()
         setLoading(true)
 
-        //user create
 
         try {
 
@@ -78,14 +78,29 @@ export const useAuthentication = () => {
 
     }
 
+const logout = () => {
+checkIsCancelled()
+signOut(auth)
+
+}
 
     useEffect(() => {
         return setCancelled(true)
     }, [])
 
+
+
+
+
+
+
+    
     return {
-        auth, createUser, error, loading,
+        auth, createUser, error, loading, logout
     }
+
+
+    
 
 }
 
