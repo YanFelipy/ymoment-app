@@ -1,20 +1,29 @@
-
-
-//PAGES & ROUTES
-
 import { Routes, Route } from 'react-router-dom'
-import Home from '../pages/Home/Home'
-import About from '../pages/About/About'
+
+//PAGES 
 import Login from '../pages/Login/Login'
 import Register from '../pages/Register/Register'
+import Dashboard from '../pages/Dashboard/Dashboard'
+import About from '../pages/About/About'
+
+import { useAuthValue } from '../../context/AuthContext'
 
 const RoutesPages = () => {
+
+  const {user} = useAuthValue()
   
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
+      {user && 
+<Route path='/' element={<Dashboard/>} />
+}
+      {!user && 
+        <Route path='/' element={<Login/>} />
+      }
       <Route path='/About' element={<About />} />
-      <Route path='/Login' element={<Login/>} />
+
+
+
        <Route path='/Register' element={<Register/>} />
     </Routes>
 

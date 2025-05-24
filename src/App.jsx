@@ -42,7 +42,7 @@ setUser(user)
 
   return (
     <div className="app">
-      <AuthProvider value={user}>
+      <AuthProvider value={{user}}>
 
             <BrowserRouter>
             <Navbar/>
