@@ -1,17 +1,39 @@
 import styles from './Login.module.css'
 import { UseChangeTitle } from '../../hooks/useChangeTitle.jsx'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import {useAuthentication} from '../../hooks/useAuthentication.jsx'
 
 const Login = () => {
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
+  const [error, setError] = useState("")
+   const {error: authError, loading, login } = useAuthentication();
 
-
-  UseChangeTitle("Entrar")
-
+ UseChangeTitle("Entrar")
   let navigate = useNavigate()
 
+
+const userLogin = async (e) =>{ 
+e.preventDefault() 
+ setError("");
+
+const User = {
+  email, 
+  pass
+}
+
+const res = await login(User) 
+ console.log(res);
+}
+
+
+  useEffect(() => {
+    if (authError) {
+      setError(authError);
+      setPass("")
+    }
+  }, [authError]);
   return (
 
     <div className={styles.login_box} >
@@ -24,7 +46,7 @@ const Login = () => {
 
       </div>
 
-      <form className={styles.forms_login}>
+      <form onSubmit={userLogin}  className={styles.forms_login}>
 
         <label className={styles.labels}>
           <span>Email:</span>
@@ -38,9 +60,16 @@ const Login = () => {
 
 
         <div className={styles.submit_box_login}>
-          <label className={styles.labels}>
-            <input type='submit' value="Entrar" />
-          </label>
+
+           {!loading &&
+            <label className={styles.labels}>
+              <input type='submit' value="Entrar"
+              />
+            </label>}
+
+          {loading && <label className={styles.labels}>
+            <input disabled type='submit' className={styles.disabled_submit} value="Aguarde..." />
+          </label>}
 
           <button onClick={() => {
             navigate("/register");
@@ -48,6 +77,10 @@ const Login = () => {
             Não tem uma conta? Cadastre-se!
           </button>
 
+        </div>
+
+        <div className={styles.error}>
+          {error && <p> {error}</p>}
         </div>
 
       </form>

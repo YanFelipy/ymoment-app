@@ -58,7 +58,7 @@ export const useAuthentication = () => {
 
             let systemErrorMessage
 
-            if (error.message.includes("Password")) {
+            if (error.message.includes("wrong-password")) {
                 systemErrorMessage = "A senha precisa ter mais de 6 caracteres"
             }
 
@@ -78,9 +78,48 @@ export const useAuthentication = () => {
 
     }
 
+    //LOGOUT
+
 const logout = () => {
 checkIsCancelled()
+
 signOut(auth)
+
+}
+
+   //LOGIN
+const login = async (data) => {
+checkIsCancelled()
+setError(false)
+
+try {
+  await signInWithEmailAndPassword( auth, data.email, data.pass)
+  
+  setLoading(false)
+
+} catch (error) {
+    console.log(error.message)
+            console.log(typeof error.message)
+
+            let systemErrorMessage
+
+            if (error.message.includes("auth/user-not-found")) {
+                systemErrorMessage = "Este e-mail não está associado a nenhuma conta do yMoment"
+            }
+
+            else if (error.message.includes("(auth/invalid-credential")) {
+                systemErrorMessage = "E-mail ou senha incorretos, verifique e tente novamente"
+            }
+            else if (error.message.includes("invalid-email)")) {
+                systemErrorMessage = "Email inválido, digite seu email corretamente"
+            }
+            else {
+                systemErrorMessage = "Ocorreu um erro, tente novamente mais tarde"
+            }
+            setError(systemErrorMessage)
+            setLoading(false)
+
+}
 
 }
 
@@ -96,7 +135,7 @@ signOut(auth)
 
     
     return {
-        auth, createUser, error, loading, logout
+        auth, createUser, error, loading, logout, login
     }
 
 
