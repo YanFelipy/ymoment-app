@@ -17,11 +17,10 @@ const RoutesPages = () => {
       
 <Route path='/' element={!user ?  
 <Login/> :<Dashboard/>
-
 } />
+
 <Route path='/login' element={user ?  
-<Dashboard/> :<Login
-/>
+<Dashboard/> :<Login/>
 }/>
 
        <Route path='/Register' element={!user ?  

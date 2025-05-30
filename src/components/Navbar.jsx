@@ -50,10 +50,10 @@ Sobre
         </li>
 
    {user && 
-         <li>
-          <button onClick={logout}>
+         <li >
+          <a className={({ isActive }) => (isActive ? styles.active : "")} onClick={logout}>
 Sair
-          </button>
+          </a>
         </li>
 }
       </ul>

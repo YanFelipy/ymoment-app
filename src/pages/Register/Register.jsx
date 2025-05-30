@@ -1,28 +1,24 @@
+//STYLES
 import styles from './Register.module.css'
 
+//HOOKS 
 import { useNavigate } from "react-router";
-
 import { useState, useEffect } from 'react'
-
 import { UseChangeTitle } from '../../hooks/useChangeTitle.jsx'
 import { useAuthentication } from '../../hooks/useAuthentication.jsx'
-
-
-
 
 function Register() {
 
   const navigate = useNavigate("")
-
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [pass, setPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
   const [error, setError] = useState("");
-
-
   const { createUser, error: authError, loading } = useAuthentication();
 
+
+  //SUBMIT FORM (REGISTER)
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -32,6 +28,8 @@ function Register() {
       email,
       pass,
     };
+
+    // RULES FORM
 
     if (pass !== confirmPass) {
       setError("As senhas precisam ser iguais!");
@@ -50,11 +48,10 @@ function Register() {
   };
 
 
-
   useEffect(() => {
-    if (authError) {
-      setError(authError);
-    }
+
+    if(authError)
+      {setError(authError)}
   }, [authError]);
 
 

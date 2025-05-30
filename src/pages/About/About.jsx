@@ -5,7 +5,7 @@ import { UseChangeTitle } from '../../hooks/useChangeTitle.jsx'
 const About = () => {
   UseChangeTitle("Sobre o yMoment")
   return (
-    <div>About</div>
+    <div>Sobre o yMoment</div>
   )
 }
 
