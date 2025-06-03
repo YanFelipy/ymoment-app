@@ -193,7 +193,7 @@ max-width: 100%;
     
 }
 .userPost h3{
-    width: min-content;
+    width: max-content;
 }
 .userPost span{
     font-size: .7em;
@@ -205,10 +205,11 @@ max-width: 100%;
     display: flex;
 }
 
+
 .submit_box_post {
     display: flex;
     width: 100%;
-    justify-content: end;
+    justify-content: space-between;
     padding: 0px 2px;
 }
 
@@ -264,9 +265,14 @@ max-width: 100%;
     width: 16px;
 }
 
-
+.submit_box_post label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .submit_box_post input {
+ 
     width: 100px;
     height: 40px;
     margin-right: 5px;
@@ -305,13 +311,23 @@ max-width: 100%;
 }
 
 .error p {
-    color: #ffffff;
-    background-color: #fd3f3fbb;
-    border: 1px solid #b3b3b3c5;
-    padding: 8px;
-    font-size: .7em;
+    
+    
+    margin-right: 5px;
+    border-width: 1px;
+    border-color: rgb(214, 214, 214);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    
+    color: rgb(214, 27, 27);
     font-weight: 500;
-    border-radius: 5px;
+    font-size: .6em;
+    font-family: 'Poppins', sans-serif;
+    animation: moments 5s linear infinite;
+    padding: 5px 5px;
     animation: bounce 7s ease forwards;
 }
 
