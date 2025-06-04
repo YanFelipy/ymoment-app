@@ -88,3 +88,12 @@ justify-content: center;
 .post_tags {
     display: flex;
 }
+
+ .userPost .tag {
+    width: max-content;
+    font-size: .7em;
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.144);
+    padding: 5px;
+    border-radius: 10px;
+}

@@ -22,7 +22,7 @@ const Dashboard = () => {
 
   const navigate = useNavigate()
     const { insertDocument, response } = useInsertDocument("posts")
-const { documents: posts, loading, error } = useFetchDocuments("posts")
+const { documents: posts, loading } = useFetchDocuments("posts")
 
     const { user } = useAuthValue()
   
@@ -69,8 +69,10 @@ const { documents: posts, loading, error } = useFetchDocuments("posts")
       createdBy: user.displayName
     })
   
+setBody("")  
+setImage("")
+setTags("")   
 
-     
       navigate("/")
   }
 console.log(posts)

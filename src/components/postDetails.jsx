@@ -21,7 +21,7 @@ const PostDetails = ({post}) => {
                  <div className={styles.userPost}>
                    <div className={styles.u_time}>
                      <h3>{post.createdBy}</h3>
-                     <span>{new Date(post.createdAt.seconds *1000 ).toLocaleString("pt-BR")  }</span>
+                     <span>{new Date(post.createdAt.toDate() ).toLocaleString("pt-BR")  }</span>
                  
                    </div>
                    <div className={styles.post_body}>
@@ -30,7 +30,7 @@ const PostDetails = ({post}) => {
                     <br />
 <div className={styles.post_tags}>
                      { post.tagsArray && post.tagsArray.map((tag) => (
-                       <p key={tag}><span>#</span>{tag}</p>
+                       <p className={styles.tag} key={tag}><span>#</span>{tag}</p>
                                         
                        ))}
      </div>

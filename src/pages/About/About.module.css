@@ -1,0 +1,52 @@
+.main_about {
+    display: flex;
+align-items: center;
+}
+.container_about {
+    display: flex;
+    width: 80%;
+    min-height: 50vh;
+    align-items: center;
+    justify-content: center;
+}
+.boxImage_about {
+    width: 40%;
+    
+    display: flex;
+    justify-content: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.26);
+    margin-right: 30px;
+   
+}
+
+.boxImage_about img{
+   width: 300px;
+   height: 300px;
+   border-radius: 50px;
+}
+
+.boxText_about {
+    width: 50%;
+   height: 300px;
+   padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+.boxText_about h1, p {
+    color: black;
+}
+.boxText_about h1 {
+    width: 100%;
+    margin: 10px;
+    
+}
+.boxText_about p {
+    padding: 0px 40px 0px 0px;
+}
+
+.fa_icon {
+    color: black;
+    fill: black;
+}
