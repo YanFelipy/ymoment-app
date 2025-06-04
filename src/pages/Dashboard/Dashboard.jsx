@@ -2,6 +2,8 @@ import styles from './Dashboard.module.css'
 import avatar from '../../assets/avatar.png'
 import putimgs from '../../assets/put_image.svg'
 
+import PostDetails from '../../components/postDetails'
+
 // import { collection, onSnapshot } from 'firebase/firestore'
 // import { db } from '../../../firebase/config'; 
 
@@ -27,31 +29,11 @@ const { documents: posts, loading, error } = useFetchDocuments("posts")
     const [body, setBody] = useState("")
     const [image, setImage] = useState("")
     const [tags, setTags] = useState([])
-   // const [posts, setPosts] = useState([])
+  
     
     const [formError, setFormError] = useState("")
 
-    //GET POSTS
-  
-    /* useEffect(() => {
-       const fetchItems = async () => {
-         
-         try {
-            const unsubscribe = onSnapshot(collection(db, "posts"), (snapshot) => {
-         const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-         setPosts(data);
-         return () => unsubscribe();
-       });
-         } catch (error) {
-           console.error("Error fetching items:", error);
-         }
-       };
-       fetchItems();
-
-     
-       
-     }, []); */
-
+ 
   
        
     const handleSubmitPost = (e) => {
@@ -62,7 +44,7 @@ const { documents: posts, loading, error } = useFetchDocuments("posts")
 
     //ARRAY OF TAGS
     const tagsArray = tags.split(",").map((tag)=> tag.trim().toLowerCase())
-    console.log(tagsArray)
+   
     //CHECK VALUES 
     if(body || tags == "") {
       setFormError("* Por favor, preencha todos os campos")
@@ -82,7 +64,7 @@ const { documents: posts, loading, error } = useFetchDocuments("posts")
     insertDocument({
       image,
       body,
-      tagsArray,
+    tagsArray,
       uid: user.uid,
       createdBy: user.displayName
     })
@@ -155,48 +137,10 @@ console.log(posts)
         </div>
 
         <div className={styles.box_feed}>
-{loading && <p className={styles.p_loading}>Carregando posts...</p>}
- 
+          {loading && <p className={styles.p_loading}>Carregando posts...</p>}
  {posts && posts.map((post) => (
-     <div className={styles.user_and_post} key={post.id}>
-            <div className={styles.profile_feed}>
-              <div className={styles.userprof_feed}>
-                <a>
-                  <img className={styles.avatar_profile} src={avatar} />
-                  </a>
-              </div>
-            </div>
-
-            <div className={styles.content_post}>
-
-              {/* Fazer o map do nome e post do usuário */}
-
-              <div className={styles.userPost}>
-                <div className={styles.u_time}>
-                  <h3>{post.createdBy}</h3>
-                  
-                  <span>{ new Date(post.createdAt.seconds *1000).toLocaleString("pt-BR")}</span>
-              
-                </div>
-                <p >{post.body} </p>
-             
-             {post.image && 
-                 <img width="120px" src={post.image} />
-                 }<br />
-                 <span>#{post.tags}</span>
-              </div>
-            </div>
-
-          </div>
-
-   ))}
-
-
-
-
-    
-
-
+  <PostDetails key={post.id} post={post}/>
+ ) ) }
         </div>
 
       </div>

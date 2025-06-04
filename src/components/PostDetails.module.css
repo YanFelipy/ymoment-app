@@ -1,0 +1,90 @@
+.user_and_post {
+width: 100%;
+display: flex;
+padding: 10px 0px;
+justify-content: center;
+
+}
+
+.profile_feed {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 5px;
+          border: solid 1px rgb(212, 212, 212);
+          border-right: none;
+          border-top-left-radius: 0px;
+}
+
+.profile_feed p {
+    color: black;
+    font-size: .4em;
+}
+.userprof_feed {
+    padding: 5px;
+
+}
+
+.avatar_profile {
+    width: 40px;
+    height: 40px;
+}
+
+.content_post {
+    width: 70%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+     padding: 5px;
+  border: solid 1px rgb(212, 212, 212);
+       border-left: none;
+}
+
+.content_post h3,
+.content_post p {
+    margin: 0px;
+    margin: 2px;
+    padding: 2px;
+    
+}
+.userPost {
+    width: 95%;
+    padding: 2px;
+    margin: 2px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    
+}
+.userPost h3{
+    width: max-content;
+}
+.userPost span{
+    font-size: .7em;
+    margin-top: 5px;
+    padding: 2px 2px ;
+    font-weight: 300;
+}
+.userPost .u_time{
+    display: flex;
+}
+
+.post_body {
+    display: flex;
+    flex-direction: column;
+
+}
+.post_body img {
+    width: 120px;
+}
+.post_tags {
+    display: flex;
+}

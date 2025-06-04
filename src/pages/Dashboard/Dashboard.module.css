@@ -29,13 +29,6 @@
     flex-direction: column;
     
 }
-.user_and_post {
-width: 100%;
-display: flex;
-padding: 10px 0px;
-justify-content: center;
-
-}
 
 .box_trending_hashtags {
 display: flex;
@@ -58,7 +51,6 @@ flex-direction: column;
     width: 100%;
         border: solid 1px rgb(212, 212, 212);
     
-     
 }
 
 .hash_list{
@@ -115,10 +107,9 @@ width: 20%;
 
 
 .carrousel_img {
-  
     display: flex;
     justify-content: center;
-max-width: 100%;
+   max-width: 100%;
   height: auto;
   object-fit: contain;
 }
@@ -129,9 +120,8 @@ max-width: 100%;
 }
 
 
-.profile_writer,
-.profile_feed {
-    width: 10%;
+.profile_writer{
+        width: 10%;
     display: flex;
     justify-content: center;
     border-radius: 25px;
@@ -142,14 +132,8 @@ max-width: 100%;
           border: solid 1px rgb(212, 212, 212);
           border-right: none;
 }
-.profile_feed {
-    border-top-left-radius: 0px;
-}
 
-.profile_feed p {
-    color: black;
-    font-size: .4em;
-}
+
 
 .form_writer {
     width: 70%;
@@ -162,32 +146,8 @@ max-width: 100%;
        border-left: none;
 }
 
-.content_post {
-    width: 70%;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    border-radius: 25px;
-    background-color: rgb(255, 255, 255);
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
-     padding: 5px;
-  border: solid 1px rgb(212, 212, 212);
-       border-left: none;
-}
 
-.content_post h3,
-.content_post p {
-    margin: 0px;
-    margin: 2px;
-    padding: 2px;
-    
-}
-
-
-.post_form,
-.userPost {
+.post_form {
     width: 95%;
     padding: 2px;
     margin: 2px;
@@ -195,19 +155,6 @@ max-width: 100%;
     border-radius: 25px;
     
 }
-.userPost h3{
-    width: max-content;
-}
-.userPost span{
-    font-size: .7em;
-    margin-top: 5px;
-    padding: 2px 2px ;
-    font-weight: 300;
-}
-.userPost .u_time{
-    display: flex;
-}
-
 
 .submit_box_post {
     display: flex;
@@ -216,8 +163,7 @@ max-width: 100%;
     padding: 0px 2px;
 }
 
-.userprof_writer,
-.userprof_feed {
+.userprof_writer {
     padding: 5px;
 
 }
