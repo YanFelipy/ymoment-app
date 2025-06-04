@@ -2,35 +2,38 @@ import styles from './Dashboard.module.css'
 import avatar from '../../assets/avatar.png'
 import putimgs from '../../assets/put_image.svg'
 
-import { collection, onSnapshot } from 'firebase/firestore'
-import { db } from '../../../firebase/config'; 
+// import { collection, onSnapshot } from 'firebase/firestore'
+// import { db } from '../../../firebase/config'; 
 
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthValue } from '../../../context/AuthContext'
 
+//HOOKS
+import { useFetchDocuments } from '../../hooks/useFetchDocument';
 import { useInsertDocument } from '../../hooks/useInsertDocument'
 
 
 const Dashboard = () => {
-  
+
+
   const navigate = useNavigate()
     const { insertDocument, response } = useInsertDocument("posts")
-
+const { documents: posts, loading, error } = useFetchDocuments("posts")
 
     const { user } = useAuthValue()
   
     const [body, setBody] = useState("")
     const [image, setImage] = useState("")
     const [tags, setTags] = useState([])
-    const [posts, setPosts] = useState([])
+   // const [posts, setPosts] = useState([])
     
     const [formError, setFormError] = useState("")
 
     //GET POSTS
   
-     useEffect(() => {
+    /* useEffect(() => {
        const fetchItems = async () => {
          
          try {
@@ -47,7 +50,7 @@ const Dashboard = () => {
 
      
        
-     }, []);
+     }, []); */
 
   
        
@@ -70,6 +73,8 @@ const Dashboard = () => {
       new URL(image)
     } catch (error) {
       setFormError("* A imagem precisa ser uma URL ")
+      console.log(error)
+
     }
 
     if (formError) return
@@ -150,13 +155,15 @@ console.log(posts)
         </div>
 
         <div className={styles.box_feed}>
-
+{loading && <p className={styles.p_loading}>Carregando posts...</p>}
  
- {posts.map(post => (
+ {posts && posts.map((post) => (
      <div className={styles.user_and_post} key={post.id}>
             <div className={styles.profile_feed}>
               <div className={styles.userprof_feed}>
-                <a><img className={styles.avatar_profile} src={avatar} /></a>
+                <a>
+                  <img className={styles.avatar_profile} src={avatar} />
+                  </a>
               </div>
             </div>
 
@@ -168,7 +175,8 @@ console.log(posts)
                 <div className={styles.u_time}>
                   <h3>{post.createdBy}</h3>
                   
-                <span> {new Date(post.createdAt.seconds * 1000).toLocaleString("pt-BR")}</span>
+                  <span>{ new Date(post.createdAt.seconds *1000).toLocaleString("pt-BR")}</span>
+              
                 </div>
                 <p >{post.body} </p>
              
@@ -186,29 +194,7 @@ console.log(posts)
 
 
 
-          <div className={styles.user_and_post}>
-
-            <div className={styles.profile_feed}>
-              <div className={styles.userprof_feed}>
-                <a><img className={styles.avatar_profile} src={avatar} /></a>
-              </div>
-            </div>
-
-            <div className={styles.content_post}>
-
-              {/* Fazer o map do nome e post do usuário */}
-
-              <div className={styles.userPost}>
-                <div className={styles.u_time}>
-                  <h3>Clara</h3>
-                  <span>20min</span>
-                </div>
-                <p >Amanhã vou viajar.. 🌎</p>
-              </div>
-
-            </div>
-
-          </div>
+    
 
 
         </div>
