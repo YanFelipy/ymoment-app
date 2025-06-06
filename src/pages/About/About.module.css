@@ -11,8 +11,7 @@ align-items: center;
 }
 .boxImage_about {
     width: 40%;
-    
-    display: flex;
+        display: flex;
     justify-content: center;
     border-right: 1px solid rgba(0, 0, 0, 0.26);
     margin-right: 30px;
@@ -34,19 +33,62 @@ align-items: center;
     justify-content: start;
     align-items: start;
 }
+    .boxText_about  div {
+        display: flex;
+    }
+
 .boxText_about h1, p {
+    
     color: black;
+    
+}
+.boxText_about  span {
+    font-weight: 500;
+    color:rgb(201, 201, 201) ;
 }
 .boxText_about h1 {
     width: 100%;
     margin: 10px;
+      font-weight: 700;
+  background: radial-gradient(circle, dodgerblue, rgb(2, 202, 216));
+  background-clip: text;
+  color: transparent;
+
+  animation: moments 15s linear infinite;
+  background-size: 300% 300%;
     
 }
 .boxText_about p {
-    padding: 0px 40px 0px 0px;
+    color: rgb(83, 83, 83);
+    margin: 5px;
+    max-width: 80%;
+    
 }
 
 .fa_icon {
     color: black;
     fill: black;
+}
+.personal_links {
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+    list-style: none;
+}
+
+
+
+@keyframes moments {
+    0% {
+        background-position: 0% 0%;
+
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    0% {
+        background-position: 0% 0%;
+    }
 }

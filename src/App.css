@@ -1,10 +1,10 @@
 
 .container {
   display: flex;
-  min-height: 75vh;
-  margin-bottom: 20px;
+  min-height: 120vh;
+  margin-bottom: 130px;
 justify-content: center;
-align-items: center;
+
 
 }
 

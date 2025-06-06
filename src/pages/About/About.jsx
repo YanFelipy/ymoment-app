@@ -15,8 +15,15 @@ const About = () => {
         </div>
 
 <div className={styles.boxText_about}>
-<h1> Sobre o yMoment</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur debitis quidem, adipisci ut id, tempora corporis modi asperiores molestiae vitae, sunt minima repudiandae. Commodi pariatur, adipisci exercitationem velit rerum eum?</p>
+<h1><span>Sobre o y</span>Moments</h1>
+<p>&nbsp; O "yMoment"ou "Your Moments" é um projeto de blog, onde você pode  se cadastrar,
+   fazer postagens, publicar fotos a partir de uma URL e utilizar tags para referenciar suas
+    postagens. O projeto tem o objetivo de fixar e colocar em prática os conhecimentos adquiridos de React e Firebase. Neste projeto, também foi utilizado o CSS Modules. O app teve como base o projeto "Mini Blog" do curso em React - Hora de Codar, contudo, repleto de novas implementações (visuais e funcionais).  </p><br/>
+<br />
+<ul className={styles.personal_links}>
+  <li><a> Linkedin </a> </li>
+  <li><a> GitHub </a> </li>
+  </ul>
 
         </div>
       </div>

@@ -75,7 +75,7 @@ setTags("")
 
       navigate("/")
   }
-console.log(posts)
+
 
   return (
     <main>
@@ -141,7 +141,7 @@ console.log(posts)
         <div className={styles.box_feed}>
           {loading && <p className={styles.p_loading}>Carregando posts...</p>}
  {posts && posts.map((post) => (
-  <PostDetails key={post.id} post={post}/>
+  <PostDetails key={post.id} post={post} desc={"Ler mais"} link={`/posts/${post.id}`}/>
  ) ) }
         </div>
 

@@ -7,6 +7,7 @@ import Dashboard from '../pages/Dashboard/Dashboard'
 import About from '../pages/About/About'
 
 import { useAuthValue } from '../../context/AuthContext'
+import Post from '../pages/Post/Post'
 
 const RoutesPages = () => {
 
@@ -29,7 +30,7 @@ const RoutesPages = () => {
 
 <Route path='/About' element={<About />} />
 
-
+ <Route path='/posts/:postId' element={<Post />} />
  
     </Routes>
 

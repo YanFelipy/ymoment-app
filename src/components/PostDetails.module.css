@@ -80,13 +80,43 @@ justify-content: center;
 .post_body {
     display: flex;
     flex-direction: column;
+    
+
+}
+.post_string_body {
+    font-weight: 300;
+
+}
+
+.content_post_link {
+    width: 50%;
+    display: flex;
+   margin-left: 20px;
+   justify-content: end;
+    height: min-content;
+    text-align: end;
+    cursor: default;
+    font-size: .7em;
+    padding: 5px;
+    
+}
+
+.box_image_body {
+position: relative;
+width: 100%;
+
 
 }
 .post_body img {
+    margin: 10px 10px;
     width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    object-fit: cover;
 }
 .post_tags {
     display: flex;
+    padding: 10px 0px;
 }
 
  .userPost .tag {
@@ -96,4 +126,8 @@ justify-content: center;
     background-color: rgba(0, 0, 0, 0.144);
     padding: 5px;
     border-radius: 10px;
+}
+
+.post_link:hover{
+    cursor: pointer;
 }
