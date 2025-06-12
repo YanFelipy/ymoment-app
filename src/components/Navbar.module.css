@@ -51,6 +51,35 @@
 
 }
 
+.field_search {
+   display: flex;
+  border-radius: 20px;
+  
+  border: 2px solid dodgerblue;
+  padding: .1em .6em;
+  
+}
+
+.field_search:focus-within{
+ border: 3px solid rgba(27, 223, 233, 0.764);
+}
+
+.field_search input {
+  border: 0px ;
+  color: black;
+  font-size: 1.2 em;
+  font-family: 'Poppins', sans-serif;
+  font-weight:4200;
+}
+.svg_search {
+  display: flex;
+  align-items: center;
+  padding: .2em .1em;
+}
+
+.navlinks li  {
+display: flex;
+}
 
 .navlinks li a {
   margin: .4em .6em;

@@ -16,8 +16,7 @@ const RoutesPages = () => {
   return (
     <Routes>
       
-<Route path='/' element={!user ?  
-<Login/> :<Dashboard/>
+<Route path='/' element={<Dashboard/>
 } />
 
 <Route path='/login' element={user ?  

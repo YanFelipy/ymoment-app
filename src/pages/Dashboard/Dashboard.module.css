@@ -187,6 +187,10 @@ width: 20%;
   border-radius: 20px;
   padding: 10px;
 }
+
+.inputs_hash:focus {
+    border: 1px solid rgb(16, 155, 236);
+}
 .btn_up_image {
     display: flex;
     flex-direction: row;
@@ -198,7 +202,9 @@ width: 20%;
   border-radius: 20px;
   padding: 10px;
 }
-
+.btn_up_image input:focus {
+        border-bottom: 2px solid rgb(16, 155, 236);
+}
 .Inp_imageurl {
     font-size: .6em;
     padding: 2px;
@@ -227,10 +233,7 @@ width: 20%;
     margin-right: 5px;
     border-width: 1px;
     border-color: rgb(214, 214, 214);
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-radius: 20px;
     text-shadow: 0px 1px 0px rgba(67, 68, 68, 1);
     background: radial-gradient(circle, dodgerblue, rgb(2, 202, 216));
     color: rgb(255, 255, 255);
@@ -240,7 +243,7 @@ width: 20%;
     animation: moments 5s linear infinite;
     background-size: 300% 300%;
     cursor: pointer;
-    padding: 5px 5px;
+    padding: 8px 8px;
 
 }
 
