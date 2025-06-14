@@ -1,4 +1,3 @@
-// import styles from '../pages/Dashboard/Dashboard.module.css'
 import avatar from './../assets/avatar.png'
 import styles from './PostDetails.module.css'
 

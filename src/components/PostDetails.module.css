@@ -89,10 +89,9 @@ justify-content: center;
 }
 
 .content_post_link {
-    width: 50%;
+    width: 70%;
     display: flex;
-   margin-left: 20px;
-   justify-content: end;
+    justify-content: end;
     height: min-content;
     text-align: end;
     cursor: default;

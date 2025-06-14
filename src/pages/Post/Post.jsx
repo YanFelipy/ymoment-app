@@ -1,8 +1,7 @@
 import PostDetails from '../../components/postDetails'
 import styles from './Post.module.css'
-// import postDetails from '../../components/postDetails'
 
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useFetchDocuments } from '../../hooks/useFetchDocument';
 
 

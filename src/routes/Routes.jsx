@@ -5,9 +5,11 @@ import Login from '../pages/Login/Login'
 import Register from '../pages/Register/Register'
 import Dashboard from '../pages/Dashboard/Dashboard'
 import About from '../pages/About/About'
-
-import { useAuthValue } from '../../context/AuthContext'
 import Post from '../pages/Post/Post'
+import Search from '../pages/Search/Search.jsx'
+
+//HOOKS
+import { useAuthValue } from '../../context/AuthContext'
 
 const RoutesPages = () => {
 
@@ -16,11 +18,16 @@ const RoutesPages = () => {
   return (
     <Routes>
       
-<Route path='/' element={<Dashboard/>
+<Route path='/' element={user ?  
+<Dashboard/> :<Login/>
 } />
 
 <Route path='/login' element={user ?  
 <Dashboard/> :<Login/>
+}/>
+
+<Route path='/search' element={user ?  
+<Search/> :<Login/>
 }/>
 
        <Route path='/Register' element={!user ?  

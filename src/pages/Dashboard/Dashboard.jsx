@@ -4,8 +4,6 @@ import putimgs from '../../assets/put_image.svg'
 
 import PostDetails from '../../components/postDetails'
 
-// import { collection, onSnapshot } from 'firebase/firestore'
-// import { db } from '../../../firebase/config'; 
 
 
 import { useState } from 'react'
