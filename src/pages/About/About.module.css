@@ -30,7 +30,7 @@ align-items: center;
    padding: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: start;
 }
     .boxText_about  div {
@@ -68,12 +68,6 @@ align-items: center;
 .fa_icon {
     color: black;
     fill: black;
-}
-.personal_links {
-    display: flex;
-    padding: 5px;
-    margin: 5px;
-    list-style: none;
 }
 
 

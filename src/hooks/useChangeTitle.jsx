@@ -1,6 +1,4 @@
-
 import { useEffect } from 'react'
-
 
 export const UseChangeTitle = (title) => {
   useEffect(() => {

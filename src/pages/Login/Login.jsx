@@ -23,8 +23,8 @@ const User = {
   pass
 }
 
-const res = await login(User) 
- console.log(res);
+const res = await login(User)
+
 }
 
 

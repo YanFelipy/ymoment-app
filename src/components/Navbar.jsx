@@ -20,6 +20,8 @@ const Navbar = () => {
         y<span>Moments</span>.
       </NavLink>
 
+     
+              <SearchBar />
 
       <ul className={styles.navlinks}>
 
@@ -28,7 +30,7 @@ const Navbar = () => {
           <>
 
             <li>
-              <SearchBar />
+
             </li>
 
             <li>

@@ -9,7 +9,6 @@ import { useFetchDocuments } from '../../hooks/useFetchDocument';
 
 const Post = () => {
 const {documents : posts} = useFetchDocuments("posts")
-console.log(posts)
 
 let params = useParams()
 const postId = params.postId

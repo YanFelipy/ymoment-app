@@ -5,7 +5,8 @@
    
 }
 .content_post {
-    height: 350px;
+    max-height: 350px;
+max-height: fit-content;
     margin-top: 50px;
 display: flex;
 width: 100%;

@@ -1,10 +1,11 @@
 .field_search {
    display: flex;
   border-radius: 20px;
-  
   border: 2px solid dodgerblue;
   padding: .1em .6em;
-  
+  width: 30%;
+  justify-content: space-between;
+  margin-right: 80px;
 }
 
 .field_search:focus-within{
@@ -12,6 +13,7 @@
 }
 
 .field_search input {
+  width: 80%;
   border: 0px ;
   color: black;
   font-size: 1.2 em;
@@ -21,5 +23,6 @@
 .svg_search {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: .2em .1em;
 }

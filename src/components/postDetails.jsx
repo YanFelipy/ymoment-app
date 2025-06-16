@@ -20,8 +20,10 @@ const PostDetails = ({post, link, desc}) => {
    
                  <div className={styles.userPost}>
                    <div className={styles.u_time}>
+                    <div className={styles.username_and_postdate}>
                      <h3>{post.createdBy}</h3>
                      <span>{new Date(post.createdAt.toDate() ).toLocaleString("pt-BR")  }</span>
+                    </div>
                  <div className={styles.content_post_link}>
 <Link to={link}> {desc}
                       </Link>

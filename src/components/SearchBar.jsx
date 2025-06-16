@@ -1,18 +1,17 @@
 import { useNavigate } from 'react-router-dom'
 import styles from './SearchBar.module.css'
-import { useState } from 'react'
+import { useState} from 'react'
 
 
 const SearchBar = () => {
   
 const navigate = useNavigate()
     const [query, setQuery] = useState("")
-
-    const handleSearch = () => {
-
-      if(query) {
-        return navigate(`/search?q=${query}`)
-      }
+      const handleSearch = () => {
+      
+         if(query) {
+        return  navigate(`/search?q=${query}`, setQuery("") )
+         }
 
     }
 

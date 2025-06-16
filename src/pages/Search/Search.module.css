@@ -3,12 +3,11 @@
 
     justify-content: center;
     width: 50vw;
-
    
 }
 .content_post {
     height: 350px;
-    margin-top: 50px;
+    margin-top: 20px;
 display: flex;
 width: 100%;
    flex-direction: column;
@@ -16,5 +15,18 @@ width: 100%;
 
 .post_details {
     width: 30px;
+}
+
+.search_results_ok span{
+font-weight: 500;
+}
+.search_no_results h2 {
+color: rgb(118, 118, 118)
+}
+.search_no_results p{
+    font-size: .8em;
+}
+.search_no_results span {
+    color: dodgerblue;
 }
 
