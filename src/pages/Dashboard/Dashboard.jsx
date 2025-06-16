@@ -1,52 +1,52 @@
+//STYLE AND ASSETS
 import styles from './Dashboard.module.css'
 import avatar from '../../assets/avatar.png'
 import putimgs from '../../assets/put_image.svg'
 
+//COMPONENTS
 import PostDetails from '../../components/postDetails'
 
-
-
+//HOOKS
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthValue } from '../../../context/AuthContext'
-
-//HOOKS
 import { useFetchDocuments } from '../../hooks/useFetchDocument';
 import { useInsertDocument } from '../../hooks/useInsertDocument'
 
 
 const Dashboard = () => {
 
+  //DEC HOOKS
+  const { user } = useAuthValue()
+  const uid = user.uid
 
   const navigate = useNavigate()
-    const { insertDocument, response } = useInsertDocument("posts")
-const { documents: posts, loading } = useFetchDocuments("posts")
+  const { insertDocument, response } = useInsertDocument("posts")
+  const { documents: posts, loading } = useFetchDocuments("posts", null, uid)
 
-    const { user } = useAuthValue()
-  
-    const [body, setBody] = useState("")
-    const [image, setImage] = useState("")
-    const [tags, setTags] = useState([])
-  
-    
-    const [formError, setFormError] = useState("")
+  //STATES
+  const [body, setBody] = useState("")
+  const [image, setImage] = useState("")
+  const [tags, setTags] = useState([])
+  const [formError, setFormError] = useState("")
 
- 
-  
-       
-    const handleSubmitPost = (e) => {
-      e.preventDefault()
-      setFormError("")
+
+
+  //SUBMITING POSTS
+
+  const handleSubmitPost = (e) => {
+    e.preventDefault()
+    setFormError("")
 
 
 
     //ARRAY OF TAGS
-    const tagsArray = tags.split(",").map((tag)=> tag.trim().toLowerCase())
-   
+    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase())
+
     //CHECK VALUES 
-    if(body || tags == "") {
+    if (body || tags == "") {
       setFormError("* Por favor, preencha todos os campos")
-    }  
+    }
     //VALIDATE IMAGE
 
     try {
@@ -62,16 +62,16 @@ const { documents: posts, loading } = useFetchDocuments("posts")
     insertDocument({
       image,
       body,
-    tagsArray,
+      tagsArray,
       uid: user.uid,
       createdBy: user.displayName
     })
-  
-setBody("")  
-setImage("")
-setTags("")   
 
-      navigate("/")
+    setBody("")
+    setImage("")
+    setTags("")
+
+    navigate("/")
   }
 
 
@@ -111,36 +111,36 @@ setTags("")
 
               <div className={styles.submit_box_post}>
 
-                 <div className={styles.error}>
-                {response.error && <p> {response.error}</p>}
-                {formError && <p> {formError}</p>}
-              </div>
+                <div className={styles.error}>
+                  {response.error && <p> {response.error}</p>}
+                  {formError && <p> {formError}</p>}
+                </div>
 
-              
+
                 {!response.loading &&
-                <label>
-                  <input type='submit' value="Enviar Momento!" />
-                </label>
+                  <label>
+                    <input type='submit' value="Enviar Momento!" />
+                  </label>
                 }
 
                 {response.loading &&
-                <label>
-                  <input disabled type='submit' className={styles.disabled_submit} value="Enviando..." />
-                </label>
+                  <label>
+                    <input disabled type='submit' className={styles.disabled_submit} value="Enviando..." />
+                  </label>
                 }
 
               </div>
-            
-                        </form>
+
+            </form>
 
           </div>
         </div>
 
         <div className={styles.box_feed}>
           {loading && <p className={styles.p_loading}>Carregando posts...</p>}
- {posts && posts.map((post) => (
-  <PostDetails key={post.id} post={post} desc={"Ler mais"} link={`/posts/${post.id}`}/>
- ) ) }
+          {posts && posts.map((post) => (
+            <PostDetails key={post.id} post={post} desc={"Ler mais"} link={`/posts/${post.id}`} />
+          ))}
         </div>
 
       </div>

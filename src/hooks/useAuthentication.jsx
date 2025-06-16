@@ -80,25 +80,25 @@ export const useAuthentication = () => {
 
     //LOGOUT
 
-const logout = () => {
-checkIsCancelled()
+    const logout = () => {
+        checkIsCancelled()
 
-signOut(auth)
+        signOut(auth)
 
-}
+    }
 
-   //LOGIN
-const login = async (data) => {
-checkIsCancelled()
-setError(false)
+    //LOGIN
+    const login = async (data) => {
+        checkIsCancelled()
+        setError(false)
 
-try {
-  await signInWithEmailAndPassword( auth, data.email, data.pass)
-  
-  setLoading(false)
+        try {
+            await signInWithEmailAndPassword(auth, data.email, data.pass)
 
-} catch (error) {
-    console.log(error.message)
+            setLoading(false)
+
+        } catch (error) {
+            console.log(error.message)
             console.log(typeof error.message)
 
             let systemErrorMessage
@@ -119,9 +119,9 @@ try {
             setError(systemErrorMessage)
             setLoading(false)
 
-}
+        }
 
-}
+    }
 
     useEffect(() => {
         return setCancelled(true)
@@ -133,13 +133,13 @@ try {
 
 
 
-    
+
     return {
         auth, createUser, error, loading, logout, login
     }
 
 
-    
+
 
 }
 
