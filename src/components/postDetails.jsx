@@ -9,9 +9,9 @@ const PostDetails = ({post, link, desc}) => {
     <div className={styles.user_and_post} key={post.id}>
                <div className={styles.profile_feed}>
                  <div className={styles.userprof_feed}>
-                   <a>
+                   <Link to="/profile_posts">
                      <img className={styles.avatar_profile} src={avatar} />
-                     </a>
+                     </Link>
                  </div>
                </div>
                <div className={styles.content_post}>

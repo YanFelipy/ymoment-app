@@ -20,8 +20,8 @@ const Navbar = () => {
         y<span>Moments</span>.
       </NavLink>
 
-     
-              <SearchBar />
+             {user &&
+              <SearchBar />}
 
       <ul className={styles.navlinks}>
 
@@ -36,6 +36,12 @@ const Navbar = () => {
             <li>
               <NavLink to="/" className={({ isActive }) => (isActive ? styles.active : "")}>
                 Página Inicial
+              </NavLink>
+            </li>
+
+            <li>
+              <NavLink to="/profile_posts" className={({ isActive }) => (isActive ? styles.active : "")}>
+                Meus momentos
               </NavLink>
             </li>
             

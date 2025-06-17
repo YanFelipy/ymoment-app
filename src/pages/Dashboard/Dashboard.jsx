@@ -8,7 +8,7 @@ import PostDetails from '../../components/postDetails'
 
 //HOOKS
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { useAuthValue } from '../../../context/AuthContext'
 import { useFetchDocuments } from '../../hooks/useFetchDocument';
 import { useInsertDocument } from '../../hooks/useInsertDocument'
@@ -18,11 +18,11 @@ const Dashboard = () => {
 
   //DEC HOOKS
   const { user } = useAuthValue()
-  const uid = user.uid
+
 
   const navigate = useNavigate()
   const { insertDocument, response } = useInsertDocument("posts")
-  const { documents: posts, loading } = useFetchDocuments("posts", null, uid)
+  const { documents: posts, loading } = useFetchDocuments("posts")
 
   //STATES
   const [body, setBody] = useState("")
@@ -82,7 +82,7 @@ const Dashboard = () => {
         <div className={styles.box_post}>
           <div className={styles.profile_writer}>
             <div className={styles.userprof_writer}>
-              <a><img className={styles.avatar_profile} src={avatar} /></a>
+              <Link to="/profile_posts"><img className={styles.avatar_profile} src={avatar} /></Link>
 
             </div>
           </div>

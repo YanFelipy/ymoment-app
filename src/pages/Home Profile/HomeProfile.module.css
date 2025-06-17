@@ -1,0 +1,60 @@
+.home_posts {
+    width: 80vw;
+   height: auto;
+    display: flex;
+    justify-content: center;
+border:  1px solid  rgb(194, 194, 194) ;
+border-radius: 10px;
+margin: 40px;
+}
+
+.box_menu_profile {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+align-items: center;
+border-right:  1px solid rgb(194, 194, 194);
+padding: 10px;
+ background-color: white;
+ color: black;
+ border-top-left-radius: 20px;
+
+}
+
+.userprof_posts {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}    
+
+.user_info {
+    width: 100%;
+     align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.userprof_posts span {
+    font-size: .4em;
+}
+.avatar_profile {
+    
+width: 80px;
+}
+
+.box_user_posts {
+ 
+    width: 70%;
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+     padding: 10px;
+}
+
+.post {
+    width: 80%;
+}

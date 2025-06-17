@@ -23,8 +23,8 @@ const User = {
   pass
 }
 
+// eslint-disable-next-line no-unused-vars
 const res = await login(User)
-
 }
 
 
@@ -35,6 +35,8 @@ const res = await login(User)
     }
   }, [authError]);
   return (
+<main className={styles.app_login}>
+
 
     <div className={styles.login_box} >
       <div className={styles.title_login}>
@@ -85,6 +87,7 @@ const res = await login(User)
 
       </form>
     </div>
+    </main>
 
   )
 }
