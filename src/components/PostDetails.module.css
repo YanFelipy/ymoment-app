@@ -94,6 +94,7 @@
     width: 50%;
     display: flex;
     justify-content: end;
+    align-items: center;
     height: min-content;
     text-align: end;
     cursor: default;
@@ -143,7 +144,9 @@
 .post_link:hover {
     cursor: pointer;
 }
-
+.content_post_link a {
+height: min-content;
+}
 .button_tag {
     display: flex;
     color: black;
@@ -164,3 +167,25 @@
     margin: 2px 0px;
     font-size: 1em;
 }
+.delete_post {
+      display: flex;
+        background-color:transparent;
+    box-shadow: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: .9em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    padding: 5px;
+
+}
+
+.delete_post svg {
+    width: 25px;
+    height: 25px;
+
+}
+
+.delete_post svg g path { stroke: black;}
+.delete_post svg g path:hover { stroke: rgb(198, 3, 3);}

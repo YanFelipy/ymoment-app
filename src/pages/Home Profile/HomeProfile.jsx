@@ -1,22 +1,24 @@
 import styles from './HomeProfile.module.css'
 import avatar from '../../assets/avatar.png'
 
-import PostDetails from '../../components/PostDetails.jsx'
+import PostDetails from '../../components/postDetails.jsx';
+import { Link } from 'react-router-dom';
 
 import { UseChangeTitle } from '../../hooks/useChangeTitle.jsx'
-
-
+import { useDeleteDocument } from '../../hooks/useDeletePost.jsx';
 import { useFetchDocuments } from '../../hooks/useFetchDocument';
 import { useAuthValue } from '../../../context/AuthContext'
 
 
 const Home = () => {
-    const { user } = useAuthValue()
-  const uid = user.uid
-    const { documents: posts, loading } = useFetchDocuments("posts", null, uid)
-
-  UseChangeTitle("Página Inicial")
+  UseChangeTitle("Meus Momentos ")
   
+  const { user } = useAuthValue()
+  const uid = user.uid
+  const { documents: posts, loading } = useFetchDocuments("posts", null, uid)
+  const {deleteDocument } = useDeleteDocument("posts")
+
+    
   return (
     <div className={styles.home_posts}>
       <aside className={styles.box_menu_profile}>
@@ -38,8 +40,28 @@ const Home = () => {
         <div className={styles.post}>
 
 {loading && <p className={styles.p_loading}>Carregando posts...</p>}
+
+ {posts && posts.length === 0 ?  (
+                <div className={styles.search_no_results}>
+                  <h2>
+                    Não encontramos nenhum post <span>:(</span>               </h2>
+                  <p>
+      <Link className={styles.link_home} to="/"> Clique aqui para voltar página inicial e compartilhe os seus momentos conosco!
+                </Link>
+                  </p>
+                  
+                </div>
+              ) : (<div className={styles.search_results_ok}><p>Estes são os seus momentos compartilhados<span>#{user.displayName}</span></p>
+              </div>) }
+          
+          
+          
+          
+          
+          
           {posts && posts.map((post) => (
-            <PostDetails  key={post.id} post={post} desc={"Ler mais"} link={`/posts/${post.id}`} />
+
+            <PostDetails event={()=>deleteDocument(post.id) }  key={post.id} post={post} desc={"Ler mais"} link={`/posts/${post.id}`} />
           ))}
         
         </div>

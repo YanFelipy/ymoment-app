@@ -1,5 +1,6 @@
 .home_posts {
     width: 80vw;
+    min-height: 80vh;
    height: auto;
     display: flex;
     justify-content: center;
@@ -52,9 +53,30 @@ width: 80px;
     flex-direction: column;
     align-items: center;
     justify-content: start;
-     padding: 10px;
+     padding: 8px;
 }
 
 .post {
+    padding: 10px 0px;
     width: 80%;
+}
+
+
+.search_results_ok span {
+    font-weight: 500;
+}
+
+.search_no_result {
+    min-height: 50%;
+}
+.search_no_results h2 {
+    color: rgb(118, 118, 118);
+}
+
+.search_no_results p {
+    font-size: .8em;
+}
+
+.search_no_results span {
+    color: dodgerblue;
 }
