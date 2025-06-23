@@ -1,8 +1,8 @@
 .user_and_post {
-width: 100%;
-display: flex;
-padding: 10px 0px;
-justify-content: center;
+    width: 100%;
+    display: flex;
+    padding: 10px 0px;
+    justify-content: center;
 
 }
 
@@ -16,15 +16,16 @@ justify-content: center;
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
     padding: 5px;
-          border: solid 1px rgb(212, 212, 212);
-          border-right: none;
-          border-top-left-radius: 0px;
+    border: solid 1px rgb(212, 212, 212);
+    border-right: none;
+    border-top-left-radius: 0px;
 }
 
 .profile_feed p {
     color: black;
     font-size: .4em;
 }
+
 .userprof_feed {
     padding: 5px;
 
@@ -41,13 +42,13 @@ justify-content: center;
     max-height: 350px;
     display: flex;
     flex-direction: column;
-       border-radius: 25px;
+    border-radius: 25px;
     background-color: rgb(255, 255, 255);
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
-     padding: 5px;
-  border: solid 1px rgb(212, 212, 212);
-       border-left: none;
+    padding: 5px;
+    border: solid 1px rgb(212, 212, 212);
+    border-left: none;
 }
 
 .content_post h3,
@@ -55,26 +56,30 @@ justify-content: center;
     margin: 0px;
     margin: 2px;
     padding: 2px;
-    
+
 }
+
 .userPost {
     width: 95%;
     padding: 2px;
     margin: 2px;
     background-color: rgb(255, 255, 255);
     border-radius: 25px;
-    
+
 }
-.userPost h3{
+
+.userPost h3 {
     width: max-content;
 }
-.userPost span{
+
+.userPost span {
     font-size: .6em;
     margin-top: 5px;
-    padding: 2px 2px ;
+    padding: 2px 2px;
     font-weight: 300;
 }
-.userPost .u_time{
+
+.userPost .u_time {
     display: flex;
     width: 100%;
 }
@@ -94,15 +99,16 @@ justify-content: center;
     cursor: default;
     font-size: .7em;
     padding: 5px;
-    
+
 }
 
 .post_body {
     display: flex;
     flex-direction: column;
-    
+
 
 }
+
 .post_string_body {
     font-weight: 300;
 
@@ -110,11 +116,12 @@ justify-content: center;
 
 
 .box_image_body {
-position: relative;
-width: 100%;
+    position: relative;
+    width: 100%;
 
 
 }
+
 .post_body img {
     margin: 10px 10px;
     width: 120px;
@@ -122,20 +129,38 @@ width: 100%;
     border-radius: 15px;
     object-fit: cover;
 }
+
 .post_tags {
     display: flex;
     padding: 10px 0px;
 }
 
- .userPost .tag {
+.userPost .tag {
     width: max-content;
-    font-size: .7em;
-    font-weight: 400;
-    background-color: rgba(0, 0, 0, 0.144);
-    padding: 5px;
-    border-radius: 10px;
+
 }
 
-.post_link:hover{
+.post_link:hover {
     cursor: pointer;
+}
+
+.button_tag {
+    display: flex;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.144);
+    box-shadow: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: max-content;
+    font-size: .9em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    padding: 5px;
+    margin: 5px;
+}
+
+.button_tag span {
+    margin: 2px 0px;
+    font-size: 1em;
 }

@@ -1,9 +1,18 @@
 import avatar from './../assets/avatar.png'
 import styles from './PostDetails.module.css'
 
-import { Link } from 'react-router-dom'
+
+import { Link, useNavigate } from 'react-router-dom'
 
 const PostDetails = ({post, link, desc}) => {
+ 
+  const navigate = useNavigate()
+
+  const handleSearch = (event) =>  {
+    let tagQuery = event.target.lastChild.textContent
+     
+     navigate(`/search?q=${tagQuery}`)
+    }
 
   return (
     <div className={styles.user_and_post} key={post.id}>
@@ -37,8 +46,11 @@ const PostDetails = ({post, link, desc}) => {
                    </div>
                     
 <div className={styles.post_tags}>
-                     { post.tagsArray && post.tagsArray.map((tag) => (
-                       <p className={styles.tag} key={tag}><span>#</span>{tag}</p>
+                     {post.tagsArray && post.tagsArray.map((tag) => (
+                      <button key={tag} onClick={handleSearch} className={styles.button_tag}>
+                        <span>#</span>
+                        <p className={styles.tag} key={tag}>{tag}</p>
+                      </button> 
                        
                       ))}
      </div>
