@@ -1,79 +1,23 @@
 //STYLE AND ASSETS
 import styles from './Dashboard.module.css'
 import avatar from '../../assets/avatar.png'
-import putimgs from '../../assets/put_image.svg'
+// import putimgs from '../../assets/put_image.svg'
 
 //COMPONENTS
 import PostDetails from '../../components/postDetails'
 
 //HOOKS
-import { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import { useAuthValue } from '../../../context/AuthContext'
+
+import { Link } from 'react-router-dom';
 import { useFetchDocuments } from '../../hooks/useFetchDocument';
-import { useInsertDocument } from '../../hooks/useInsertDocument'
+import PostForm from '../../components/PostForm'
 
 
 const Dashboard = () => {
 
   //DEC HOOKS
-  const { user } = useAuthValue()
 
-
-  const navigate = useNavigate()
-  const { insertDocument, response } = useInsertDocument("posts")
   const { documents: posts, loading } = useFetchDocuments("posts")
-
-  //STATES
-  const [body, setBody] = useState("")
-  const [image, setImage] = useState("")
-  const [tags, setTags] = useState([])
-  const [formError, setFormError] = useState("")
-
-
-
-  //SUBMITING POSTS
-
-  const handleSubmitPost = (e) => {
-    e.preventDefault()
-    setFormError("")
-
-
-
-    //ARRAY OF TAGS
-    const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase())
-
-    //CHECK VALUES 
-    if (body || tags == "") {
-      setFormError("* Por favor, preencha todos os campos")
-    }
-    //VALIDATE IMAGE
-
-    try {
-      new URL(image)
-    } catch (error) {
-      setFormError("* A imagem precisa ser uma URL ")
-      console.log(error)
-
-    }
-
-    if (formError) return
-
-    insertDocument({
-      image,
-      body,
-      tagsArray,
-      uid: user.uid,
-      createdBy: user.displayName
-    })
-
-    setBody("")
-    setImage("")
-    setTags("")
-
-    navigate("/")
-  }
-
 
   return (
     <main>
@@ -82,57 +26,13 @@ const Dashboard = () => {
         <div className={styles.box_post}>
           <div className={styles.profile_writer}>
             <div className={styles.userprof_writer}>
-              <Link to="/profile_posts"><img className={styles.avatar_profile} src={avatar} /></Link>
-
+              <Link to="/profile_posts">
+              <img className={styles.avatar_profile} src={avatar} /></Link>
             </div>
           </div>
 
           <div className={styles.form_writer}>
-
-            <form onSubmit={handleSubmitPost} className={styles.post_form}>
-
-              <label>
-                <textarea required value={body} onChange={(e) => setBody(e.target.value)} name="post" maxLength='200' placeholder="Diga ao mundo como se sente hoje..." id="">
-                </textarea>
-              </label>
-
-              <label >
-                <input className={styles.inputs_hash} required value={tags} onChange={(e) => setTags(e.target.value)} name="tags" maxLength='50' placeholder="Insira suas tags separadas por vírgula..." id="">
-                </input>
-              </label>
-
-
-
-              <label className={styles.btn_up_image}>
-                <img className={styles.putimg} src={putimgs} />
-                <input value={image} onChange={(e) => setImage(e.target.value)} className={styles.Inp_imageurl} type='text' placeholder="Digite a URL da imagem que combine com o seu post!" />
-
-              </label>
-
-              <div className={styles.submit_box_post}>
-
-                <div className={styles.error}>
-                  {response.error && <p> {response.error}</p>}
-                  {formError && <p> {formError}</p>}
-                </div>
-
-
-                {!response.loading &&
-                  <label>
-                    <input type='submit' value="Enviar Momento!" />
-                  </label>
-                }
-
-                {response.loading &&
-                  <label>
-                    <input disabled type='submit' className={styles.disabled_submit} value="Enviando..." />
-                  </label>
-                }
-
-              </div>
-
-            </form>
-
+            <PostForm />
           </div>
         </div>
 
