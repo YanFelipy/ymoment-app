@@ -3,7 +3,7 @@ import avatar from '../../assets/avatar.png'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import styles from './EditPost.module.css'
 import { useAuthValue } from '../../../context/AuthContext'
-import { useInsertDocument } from '../../hooks/useInsertDocument'
+import { useUpdateDocument } from '../../hooks/useUpdateDocument.jsx'
 import { useFetchDocument } from '../../hooks/useFetchDocument'
 import { useEffect, useState } from 'react'
 
@@ -13,7 +13,7 @@ const EditPost = () => {
   const { user} = useAuthValue()
   const {id} = useParams()
   const { document: post } = useFetchDocument("posts", id)
-  const { insertDocument, response } = useInsertDocument("posts")
+  const { updateDocument, response } = useUpdateDocument("posts")
 
 
   //STATES
@@ -22,7 +22,7 @@ const EditPost = () => {
   const [tags, setTags] = useState([])
   const [formError, setFormError] = useState("")
 
-  console.log(post)
+  console.log(user)
 
 useEffect(() => {
 
@@ -40,18 +40,11 @@ setTags(textTags)
 
   }, [post])
 
-
-  
-  
     const navigate = useNavigate()
   
-
-
     const handleSubmitEditPost = (e) => {
     e.preventDefault()
     setFormError("")
-
-
 
     //ARRAY OF TAGS
     const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase())
@@ -72,19 +65,21 @@ setTags(textTags)
 
     if (formError) return
 
-    insertDocument({
-      image,
+    const data = {
+  image,
       body,
       tagsArray,
       uid: user.uid,
       createdBy: user.displayName
-    })
+    }
+    updateDocument(id, data)
 
     setBody("")
     setImage("")
     setTags("")
+    setFormError("")
 
-    navigate("/")
+    navigate("/profile_posts")
   }
 
 

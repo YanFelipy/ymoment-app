@@ -137,6 +137,7 @@ const Dashboard = () => {
         </div>
 
         <div className={styles.box_feed}>
+         
           {loading && <p className={styles.p_loading}>Carregando posts...</p>}
           {posts && posts.map((post) => (
             <PostDetails key={post.id} post={post} desc={"Ler mais"} link={`/posts/${post.id}`} />
