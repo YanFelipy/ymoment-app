@@ -16,7 +16,8 @@
     
 }
 
-.box_post,.box_feed{
+.box_post,
+.box_feed{
 
     width: 750px;
     display: flex;
@@ -133,6 +134,7 @@ width: 20%;
 }
 
 
+
 .form_writer {
     width: 70%;
     background-color: rgb(255, 255, 255);
@@ -144,10 +146,28 @@ width: 20%;
        border-left: none;
 }
 
+
+.post_form {
+    width: 95%;
+    padding: 2px;
+    margin: 2px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    
+}
+
+.submit_box_post {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0px 2px;
+}
+
 .userprof_writer {
     padding: 5px;
 
 }
+
 .avatar_profile {
     width: 40px;
     height: 40px;
@@ -157,3 +177,123 @@ width: 20%;
     margin-top: 20px;
 }
 
+.inputs_hash{
+
+    border-top: 5px;
+    width: 75%;
+      font-size: .7em;
+     background-color: whitesmoke;
+      border-bottom: none;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.inputs_hash:focus {
+    border: 1px solid rgb(16, 155, 236);
+}
+.btn_up_image {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-top: 5px;
+    width: 70%;
+    padding: 4px 0px;
+     background-color: whitesmoke;
+  border-radius: 20px;
+  padding: 10px;
+}
+.btn_up_image input:focus {
+        border-bottom: 2px solid rgb(16, 155, 236);
+}
+.Inp_imageurl {
+    font-size: .6em;
+    padding: 2px;
+    width: 100%;
+    margin: 0px;
+    border-bottom: black 0, 3px solid;
+    margin-left: 5px;
+  padding: 10px;
+
+}
+
+.putimg {
+    width: 16px;
+}
+
+.submit_box_post label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit_box_post input {
+ 
+    width: 100px;
+    height: 40px;
+    margin-right: 5px;
+    border-width: 1px;
+    border-color: rgb(214, 214, 214);
+    border-radius: 20px;
+    text-shadow: 0px 1px 0px rgba(67, 68, 68, 1);
+    background: radial-gradient(circle, dodgerblue, rgb(2, 202, 216));
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    font-size: .6em;
+    font-family: 'Poppins', sans-serif;
+    animation: moments 5s linear infinite;
+    background-size: 300% 300%;
+    cursor: pointer;
+    padding: 8px 8px;
+
+}
+
+.submit_box_post input:hover {
+
+    background: radial-gradient(circle, dodgerblue, rgba(2, 255, 255, 0.911));
+    animation: moments 10s ease infinite;
+}
+.submit_box_post .disabled_submit {
+  background: radial-gradient(circle, rgb(107, 107, 107), rgb(206, 206, 206));
+  color: rgb(255, 255, 255);
+}
+.error {
+    display: flex;
+    justify-content: center;
+
+}
+
+.error p {
+    
+    
+    margin-right: 5px;
+    border-width: 1px;
+    border-color: rgb(214, 214, 214);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    
+    color: rgb(214, 27, 27);
+    font-weight: 500;
+    font-size: .6em;
+    font-family: 'Poppins', sans-serif;
+    animation: moments 5s linear infinite;
+    padding: 5px 5px;
+    animation: bounce 7s ease forwards;
+}
+
+@keyframes moments {
+    0% {
+        background-position: 0% 0%;
+
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    0% {
+        background-position: 0% 0%;
+    }
+}
