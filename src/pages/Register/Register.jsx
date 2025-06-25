@@ -57,6 +57,9 @@ function Register() {
 
   UseChangeTitle("Cadastre-se");
   return (
+    <main className={styles.app_register}>
+
+
     <div className={styles.register_box}>
       <div className={styles.title_register}>
         <h2>
@@ -116,6 +119,7 @@ function Register() {
 
 
     </div>
+        </main>
   );
 }
 

@@ -69,7 +69,8 @@ const Dashboard = () => {
 
     setBody("")
     setImage("")
-    setTags("")
+    setTags("")   
+     setFormError("* A imagem precisa ser uma URL ")
 
     navigate("/")
   }
