@@ -167,7 +167,11 @@ height: min-content;
     margin: 2px 0px;
     font-size: 1em;
 }
-.delete_post {
+
+.post_buttons {
+display: flex;
+}
+.delete_post, .edit_post {
       display: flex;
         background-color:transparent;
     box-shadow: none;
@@ -181,11 +185,13 @@ height: min-content;
 
 }
 
-.delete_post svg {
+.delete_post svg, .edit_post svg {
     width: 25px;
     height: 25px;
 
 }
 
+
 .delete_post svg g path { stroke: black;}
 .delete_post svg g path:hover { stroke: rgb(198, 3, 3);}
+.edit_post svg g path:hover { fill: dodgerblue;}

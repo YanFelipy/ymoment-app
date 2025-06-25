@@ -1,9 +1,42 @@
 import { useState, useEffect } from 'react'
 
-import { collection, onSnapshot, query, orderBy, where } from 'firebase/firestore'
+import { collection, onSnapshot, query, orderBy, where, doc, getDoc } from 'firebase/firestore'
 
 import { db } from '../../firebase/config'
 
+//FETCHING A ONE DOCUMENT BY ID
+
+export const useFetchDocument = (docCollection, id) => {
+  const [document, setDocument] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(null);
+
+  useEffect(() => {
+    const loadDocument = async () => {
+      setLoading(true);
+
+      try {
+        const docRef = await doc(db, docCollection, id);
+        const docSnap = await getDoc(docRef);
+
+        setDocument(docSnap.data());
+      } catch (error) {
+        console.log(error);
+        setError(error.message);
+      }
+
+      setLoading(false);
+    };
+
+    loadDocument();
+  }, [docCollection, id]);
+
+
+
+  return { document, loading, error };
+};
+
+//FETCHING ALL DOCUMENTS 
 export const useFetchDocuments = (docCollection, search = null, uid = null) => {
 
     const [documents, setDocuments] = useState(null)

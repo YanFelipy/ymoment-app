@@ -8,6 +8,7 @@ import About from '../pages/About/About'
 import Post from '../pages/Post/Post'
 import Search from '../pages/Search/Search.jsx'
 import Home from '../pages/Home Profile/HomeProfile.jsx'
+import EditPost from '../pages/EditPost/EditPost.jsx'
 
 //HOOKS
 import { useAuthValue } from '../../context/AuthContext'
@@ -34,7 +35,9 @@ const RoutesPages = () => {
 <Route path='/profile_posts' element={user ?  
 <Home/> :<Login/>
 }/>
-
+ <Route path='/posts/edit/:id' element={user ?  
+<EditPost /> :<Login/>
+}/>
        <Route path='/Register' element={!user ?  
  <Register/> : <Dashboard/>
 }/>
