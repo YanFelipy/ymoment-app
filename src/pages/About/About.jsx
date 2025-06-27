@@ -5,6 +5,7 @@ import aboutImage from '../../assets/teen-aboutus.png'
 
 
 const About = () => {
+
   UseChangeTitle("Sobre o yMoment")
   return (
     <main className={styles.main_about}>

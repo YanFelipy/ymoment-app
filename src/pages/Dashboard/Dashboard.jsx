@@ -12,6 +12,8 @@ import { useNavigate, Link } from 'react-router-dom'
 import { useAuthValue } from '../../../context/AuthContext'
 import { useFetchDocuments } from '../../hooks/useFetchDocument';
 import { useInsertDocument } from '../../hooks/useInsertDocument'
+import { useFilterTags} from '../../hooks/useFilterTags'
+// import { useQuery } from '../../hooks/useQuery'
 
 
 const Dashboard = () => {
@@ -19,10 +21,10 @@ const Dashboard = () => {
   //DEC HOOKS
   const { user } = useAuthValue()
 
-
   const navigate = useNavigate()
   const { insertDocument, response } = useInsertDocument("posts")
   const { documents: posts, loading } = useFetchDocuments("posts")
+  const { findRepeatedValues } = useFilterTags()
 
   //STATES
   const [body, setBody] = useState("")
@@ -30,13 +32,41 @@ const Dashboard = () => {
   const [tags, setTags] = useState([])
   const [formError, setFormError] = useState("")
 
+  // MOST USED TAGS : 
+  const findTags = posts && posts.map( (post) => {
+  let newArray = []
+ 
+  post.tagsArray.map(((tags) => {
+    newArray.push(tags)
+     })) 
+return newArray
+})
 
+let findTagsString = findTags &&  findTags.toString()
+let allTags = findTagsString && findTagsString.split(",").map(item =>item.trim() )
+const repeated = findRepeatedValues(allTags)
+
+//const xRepeatedValues1 = countTags(allTags,repeated[0]) 
+//const xRepeatedValues2 = countTags(allTags,repeated[1]) 
+//const xRepeatedValues3 = countTags(allTags,repeated[2]) 
+
+
+
+
+
+  //SUBMITING SEARCH TAGS
+    const handleSearch = (event) =>  {
+    let tagQuery = event.target.lastChild.textContent
+     
+     navigate(`/search?q=${tagQuery}`)
+    }
 
   //SUBMITING POSTS
 
   const handleSubmitPost = (e) => {
     e.preventDefault()
     setFormError("")
+
 
 
 
@@ -159,7 +189,24 @@ const Dashboard = () => {
           <div className={styles.hash_list}>
 
             <ul className={styles.trending_list}>
+{ repeated && repeated.map(((hashtag)=> (
+    <li key={hashtag.id} className={styles.li_link_tag}>
+      <button key={hashtag} onClick={handleSearch} className={styles.button_tag}>
+                                    <p>#{hashtag}</p>
+                   
+                            </button> 
+      
+                
+                <div className={styles.hash_carrousel_imgs}>
 
+                </div>
+
+              </li>
+)))}
+
+
+
+{/* 
               <li>
                 <p>#Sol</p>
                 <div className={styles.hash_carrousel_imgs}>
@@ -212,7 +259,7 @@ const Dashboard = () => {
                 </div>
 
               </li>
-
+*/}
 
             </ul>
 
