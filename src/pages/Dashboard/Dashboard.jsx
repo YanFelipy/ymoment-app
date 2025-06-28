@@ -1,10 +1,11 @@
 //STYLE AND ASSETS
 import styles from './Dashboard.module.css'
-import avatar from '../../assets/avatar.png'
+// import avatar from '../../assets/avatar.png'
 import putimgs from '../../assets/put_image.svg'
 
 //COMPONENTS
 import PostDetails from '../../components/postDetails'
+import UserDetails from '../../components/userDetails'
 
 //HOOKS
 import { useState } from 'react'
@@ -35,7 +36,7 @@ const Dashboard = () => {
   // MOST USED TAGS : 
   const findTags = posts && posts.map( (post) => {
   let newArray = []
- 
+
   post.tagsArray.map(((tags) => {
     newArray.push(tags)
      })) 
@@ -104,19 +105,31 @@ const repeated = findRepeatedValues(allTags)
 
     navigate("/")
   }
-
+console.log(user.imageProfile)
 
   return (
     <main>
       <div className={styles.pf_container}>
 
         <div className={styles.box_post}>
+          {/* 
           <div className={styles.profile_writer}>
             <div className={styles.userprof_writer}>
-              <Link to="/profile_posts"><img className={styles.avatar_profile} src={avatar} /></Link>
+              <Link to="/profile_posts" className={styles.perf_link}>
+            {user && 
+            <div className={styles.perf_rounded}>
+              <span>
+{user.displayName.charAt(0)}
+              </span>
+            </div>
+            }
+              <img className={styles.avatar_profile} src={user.imageProfile} />
+              </Link>
 
             </div>
-          </div>
+          </div> {*/}
+
+          <UserDetails user={user}/>
 
           <div className={styles.form_writer}>
 
