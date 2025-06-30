@@ -20,7 +20,7 @@ const UserDetails = ({user,post}) => {
             {            <div ref={divRef}  className={styles.perf_rounded}>
               <span>
 { post && post ? ( post.charAt(0)) : ""}
-{user ? ( user.displayName.charAt(0)) : ""}
+{ user ? ( user.displayName && user.displayName.charAt(0)) : ""}
               </span>
             </div>
             }

@@ -42,7 +42,7 @@ const Dashboard = () => {
   })) 
   return newArray
 })
-console.log(findTags)
+
 
 
 let findTagsString = findTags &&  findTags.toString()
@@ -52,8 +52,6 @@ const repeated = findRepeatedValues(allTags)
 //const xRepeatedValues1 = countTags(allTags,repeated[0]) 
 //const xRepeatedValues2 = countTags(allTags,repeated[1]) 
 //const xRepeatedValues3 = countTags(allTags,repeated[2]) 
-
-
 
 
 
@@ -69,9 +67,6 @@ const repeated = findRepeatedValues(allTags)
   const handleSubmitPost = (e) => {
     e.preventDefault()
     setFormError("")
-
-
-
 
     //ARRAY OF TAGS
     const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase())
