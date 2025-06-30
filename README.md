@@ -7,12 +7,12 @@
     Este app teve como base o projeto "Mini Blog" do curso em React - Hora de Codar, contudo, repleto de novas implementações (visuais e funcionais).
 
 ## Layout web (Login, Cadastro, Página Inicial, Posts do Usuário, Sobre & Pesquisa de Tags) 💻
-![Web 1](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-de-login.jpg) 
-![Web 2](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-de-cadastro.jpg)
-![Web 3](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-dashboard.jpg) 
-![Web 4](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-posts-do-usuario.jpg) 
-![Web 5](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-about.jpg) 
-![Web 6](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-pesquisar-tags.jpg) 
+![Web 1](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-de-login.png) 
+![Web 2](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-de-cadastro.png)
+![Web 3](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-dashboard.png) 
+![Web 4](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-posts-do-usuario.png) 
+![Web 5](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-about.png) 
+![Web 6](https://github.com/YanFelipy/ymoment-app/tree/master/src/assets/app-screenshots/tela-pesquisar-tags.png) 
 
 
 
