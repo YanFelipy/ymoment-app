@@ -1,18 +1,23 @@
 import styles from '../pages/Dashboard/Dashboard.module.css'
+    import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const userDetails = ({user,post}) => {
+
+const UserDetails = ({user,post}) => {
+  const divRef = useRef(null);
    
- const randomColor = Math.floor(Math.random()*16777215).toString(16);
- 
-   document.getElementById("#round") ?(  
-    document.getElementById("#round").style.backgroundColor = `#${randomColor}`): ""
- 
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  
+
+  useEffect(() => {
+       divRef.current.style.backgroundColor =  `#${randomColor}`
+      }, [])
+   
   return (
     <div className={styles.profile_writer}>
             <div className={styles.userprof_writer}>
               <Link to="/profile_posts" className={styles.perf_link}>
-            {            <div style={{backgroundColor: `#${randomColor}`}} className={styles.perf_rounded}>
+            {            <div ref={divRef}  className={styles.perf_rounded}>
               <span>
 { post && post ? ( post.charAt(0)) : ""}
 {user ? ( user.displayName.charAt(0)) : ""}
@@ -27,4 +32,4 @@ const userDetails = ({user,post}) => {
   )
 }
 
-export default userDetails
+export default UserDetails

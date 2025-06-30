@@ -36,12 +36,14 @@ const Dashboard = () => {
   // MOST USED TAGS : 
   const findTags = posts && posts.map( (post) => {
   let newArray = []
-
+  
   post.tagsArray.map(((tags) => {
     newArray.push(tags)
-     })) 
-return newArray
+  })) 
+  return newArray
 })
+console.log(findTags)
+
 
 let findTagsString = findTags &&  findTags.toString()
 let allTags = findTagsString && findTagsString.split(",").map(item =>item.trim() )
@@ -105,31 +107,15 @@ const repeated = findRepeatedValues(allTags)
 
     navigate("/")
   }
-console.log(user.imageProfile)
+
 
   return (
     <main>
       <div className={styles.pf_container}>
 
         <div className={styles.box_post}>
-          {/* 
-          <div className={styles.profile_writer}>
-            <div className={styles.userprof_writer}>
-              <Link to="/profile_posts" className={styles.perf_link}>
-            {user && 
-            <div className={styles.perf_rounded}>
-              <span>
-{user.displayName.charAt(0)}
-              </span>
-            </div>
-            }
-              <img className={styles.avatar_profile} src={user.imageProfile} />
-              </Link>
-
-            </div>
-          </div> {*/}
-
-          <UserDetails user={user}/>
+     
+               <UserDetails user={user}/>
 
           <div className={styles.form_writer}>
 
