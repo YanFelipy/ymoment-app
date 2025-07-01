@@ -1,47 +1,50 @@
 footer {
   left: 0;
   bottom: 0;
- position: static;
+  position: static;
   background-color: rgb(243, 243, 243);
-display: flex;
+  display: flex;
   width: 100%;
   height: fit-content;
   justify-content: center;
   align-items: center;
-padding: 5px 0px;
+  padding: 5px 0px;
 }
 
 footer h3 {
   font-size: .8em;
   font-weight: 300;
-      color: grey;
+  color: grey;
 }
 
 footer p {
   font-size: .7em;
   font-weight: 300;
-      color: black;
-      margin-bottom: 0px;
+  color: black;
+  margin-bottom: 0px;
 }
 
 .footer_box {
-text-align: center;
+  text-align: center;
 }
 
-.personal_links  {
+.personal_links {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .personal_links ul {
-    display: flex;
-    padding: 5px;
-    margin: 5px;
-    list-style: none;
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  list-style: none;
 }
+
 .personal_links ul li {
   padding: 3px;
 }
+
 .personal_links ul li svg {
   width: 20px;
 }

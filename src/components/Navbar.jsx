@@ -20,8 +20,8 @@ const Navbar = () => {
         y<span>Moments</span>.
       </NavLink>
 
-             {user &&
-              <SearchBar />}
+      {user &&
+        <SearchBar />}
 
       <ul className={styles.navlinks}>
 
@@ -44,7 +44,7 @@ const Navbar = () => {
                 Meus momentos
               </NavLink>
             </li>
-            
+
           </>
         }
 

@@ -39,66 +39,66 @@ export const useFetchDocument = (docCollection, id) => {
 //FETCHING ALL DOCUMENTS 
 export const useFetchDocuments = (docCollection, search = null, uid = null) => {
 
-    const [documents, setDocuments] = useState(null)
-    const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(null)
-    const [cancelled, setCancelled] = useState(false)
+  const [documents, setDocuments] = useState(null)
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(null)
+  const [cancelled, setCancelled] = useState(false)
 
 
 
-    useEffect(() => {
+  useEffect(() => {
 
-        const fetchPosts = async () => {
-            if (cancelled) return
+    const fetchPosts = async () => {
+      if (cancelled) return
 
-            setLoading(true)
+      setLoading(true)
 
-            const collectionRef = await collection(db, docCollection)
+      const collectionRef = await collection(db, docCollection)
 
-            try {
-                let q
+      try {
+        let q
 
-                if (search) {
-                    q = await query(collectionRef, where("tagsArray", "array-contains", search),
-                        orderBy("createdAt", "desc"))
-                }
-                   else if (uid) {
-                     q = await query(collectionRef, 
-                        where("uid", "==", uid),
-                        orderBy('createdAt', "desc"))
-                   }
-                else {
-                    q = await query(collectionRef, orderBy('createdAt', "desc"))
-                }
-                
-
+        if (search) {
+          q = await query(collectionRef, where("tagsArray", "array-contains", search),
+            orderBy("createdAt", "desc"))
+        }
+        else if (uid) {
+          q = await query(collectionRef,
+            where("uid", "==", uid),
+            orderBy('createdAt', "desc"))
+        }
+        else {
+          q = await query(collectionRef, orderBy('createdAt', "desc"))
+        }
 
 
-                await onSnapshot(q, (querySnapshot) => {
-                    const data = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-
-                    setDocuments(data);
-
-                });
-
-                setLoading(false)
-            } catch (error) {
-                console.error("Error fetching items:", error);
-                setError(error.message)
-
-                setLoading(false)
-            }
-        };
-
-        fetchPosts();
 
 
-    }, [docCollection, search, uid, cancelled]);
+        await onSnapshot(q, (querySnapshot) => {
+          const data = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+
+          setDocuments(data);
+
+        });
+
+        setLoading(false)
+      } catch (error) {
+        console.error("Error fetching items:", error);
+        setError(error.message)
+
+        setLoading(false)
+      }
+    };
+
+    fetchPosts();
 
 
-    useEffect(() => {
-        return () => setCancelled(true)
-    }, [])
+  }, [docCollection, search, uid, cancelled]);
 
-    return { documents, loading, error }
+
+  useEffect(() => {
+    return () => setCancelled(true)
+  }, [])
+
+  return { documents, loading, error }
 }

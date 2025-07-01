@@ -38,7 +38,7 @@ const Home = () => {
       </aside>
       <main className={styles.box_user_posts}>
         <div className={styles.post}>
-            {posts && posts.length === 0 ? (
+          {posts && posts.length === 0 ? (
             <div className={styles.search_no_results}>
               <h2>
                 Não encontramos nenhum post <span>:(</span>

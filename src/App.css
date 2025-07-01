@@ -1,10 +1,7 @@
 .container {
   display: flex;
   min-height: 100vh;
-align-items: start;
-justify-content: center;
+  align-items: start;
+  justify-content: center;
 
 }
-
-
-

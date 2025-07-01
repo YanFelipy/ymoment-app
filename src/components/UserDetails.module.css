@@ -1,0 +1,33 @@
+
+.profile_writer{
+        width: 10%;
+    display: flex;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: rgb(255, 255, 255);
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    padding: 5px;
+          border: solid 1px rgb(212, 212, 212);
+          border-right: none;
+}
+
+
+.userprof_writer {
+    padding: 5px;
+
+}
+
+.perf_rounded {
+   border-radius: 100%;
+   background-color: rgb(193, 193, 193);
+   color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 35px;
+   height: 35px;
+   border: 3px solid  rgba(164, 164, 164, 0.511);
+}
+
+.perf_rounded span {margin: 0px; padding: 0px;}

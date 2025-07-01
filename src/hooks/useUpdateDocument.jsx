@@ -5,8 +5,8 @@ import { db } from '../../firebase/config'
 
 
 const initialState = {
-    loading: null,
-    error: null
+  loading: null,
+  error: null
 }
 
 const updateReducer = (state, action) => {
@@ -29,7 +29,7 @@ export const useUpdateDocument = (docCollection) => {
   const [cancelled, setCancelled] = useState(false);
 
   const checkCancelBeforeDispatch = (action) => {
-     
+
     if (!cancelled) {
       dispatch(action);
     } return () => setCancelled(true);
@@ -39,9 +39,9 @@ export const useUpdateDocument = (docCollection) => {
     checkCancelBeforeDispatch({ type: "LOADING" });
 
     try {
-     const docRef =await doc(db, docCollection, id)
+      const docRef = await doc(db, docCollection, id)
 
-     const updatedDocument = await updateDoc(docRef, data)
+      const updatedDocument = await updateDoc(docRef, data)
 
       checkCancelBeforeDispatch({
         type: "UPDATED_DOC",
@@ -53,7 +53,7 @@ export const useUpdateDocument = (docCollection) => {
   };
 
   //useEffect(() => {
-   // return () => setCancelled(true);
+  // return () => setCancelled(true);
   //}, []);
 
   return { updateDocument, response };

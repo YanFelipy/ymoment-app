@@ -90,7 +90,7 @@ textarea {
   padding: 0.5em 0.2;
   font-family: 'Poppins', sans-serif;
   background-color: whitesmoke;
-   color: #4b4b4b;
+  color: #4b4b4b;
   border-radius: 20px;
   padding: 10px;
 }
@@ -115,7 +115,7 @@ textarea:focus {
 input:focus,
 textarea:focus {
   outline: none;
-  }
+}
 
 
 button [disabled] {

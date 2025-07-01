@@ -15,8 +15,8 @@
     padding: 20px;
     background-color: white;
     border-radius: 10px;
- -webkit-box-shadow: 0px 0px 10px .2px  rgb(0, 235, 196), 10px 0px 10px .2px #0793ff, 10px 0px 10px .2px rgba(0,0,0,0); 
-    box-shadow: -5px 0px 10px .3px #03acfa , 0px 0px 10px 5px  rgb(2, 216, 187), 5px 0px 10px 10px rgba(0,0,0,0);
+    -webkit-box-shadow: 0px 0px 10px .2px rgb(0, 235, 196), 10px 0px 10px .2px #0793ff, 10px 0px 10px .2px rgba(0, 0, 0, 0);
+    box-shadow: -5px 0px 10px .3px #03acfa, 0px 0px 10px 5px rgb(2, 216, 187), 5px 0px 10px 10px rgba(0, 0, 0, 0);
 
 }
 
@@ -72,20 +72,22 @@
     background: radial-gradient(circle, rgb(53, 145, 238), rgba(0, 252, 168, 0.568));
     animation: moments 10s ease infinite;
 }
+
 .submit_box .disabled_submit {
-  background: radial-gradient(circle, rgb(107, 107, 107), rgb(206, 206, 206));
-  color: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgb(107, 107, 107), rgb(206, 206, 206));
+    color: rgb(255, 255, 255);
 }
 
-.submit_box .simple_btn{
+.submit_box .simple_btn {
     color: rgb(53, 145, 238);
-    background: transparent ;
-   padding: 10px;
+    background: transparent;
+    padding: 10px;
     border: none;
     cursor: pointer;
     user-select: none;
 
 }
+
 .error {
     display: flex;
     justify-content: center;

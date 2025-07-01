@@ -50,8 +50,8 @@
 
 }
 
-.navlinks li  {
-display: flex;
+.navlinks li {
+  display: flex;
 }
 
 .navlinks li a {
@@ -70,8 +70,9 @@ display: flex;
   background-size: 300% 300%;
 
 }
+
 .icon_logout svg:hover {
-fill: radial-gradient(circle, dodgerblue, rgb(2, 202, 216));
+  fill: radial-gradient(circle, dodgerblue, rgb(2, 202, 216));
   color: transparent;
   animation: moments 2s linear infinite;
   background-size: 300% 300%;

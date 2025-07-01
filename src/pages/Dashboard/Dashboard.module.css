@@ -5,7 +5,7 @@
     justify-content: start;
     width: 650px;
     padding: 20px;
-      width: 600px;
+    width: 600px;
 }
 
 .th_container {
@@ -13,11 +13,11 @@
     flex-direction: column;
     width: 400px;
     padding: 20px;
-    
+
 }
 
 .box_post,
-.box_feed{
+.box_feed {
 
     width: 750px;
     display: flex;
@@ -25,21 +25,22 @@
     padding: 10px 0px;
     border-radius: 25px;
 }
-.box_feed{
+
+.box_feed {
     flex-direction: column;
-    
+
 }
 
 .box_trending_hashtags {
-display: flex;
+    display: flex;
     justify-content: center;
     padding: 10px 0px;
     border-radius: 25px;
-flex-direction: column;
+    flex-direction: column;
 
 }
 
-.trendings_title{
+.trendings_title {
     text-align: center;
     font-size: .8em;
     font-weight: 400;
@@ -49,90 +50,79 @@ flex-direction: column;
     color: rgb(156, 156, 156);
     padding: 5px;
     width: 100%;
-        border: solid 1px rgb(212, 212, 212);
-    
+    border: solid 1px rgb(212, 212, 212);
+
 }
 
-.hash_list{
-background-color: rgb(253, 253, 253);
-  width: 100%;
-border-radius: 25px;
- border-top-right-radius: 0px;
+.hash_list {
+    background-color: rgb(253, 253, 253);
+    width: 100%;
+    border-radius: 25px;
+    border-top-right-radius: 0px;
     border-top-left-radius: 0px;
     padding: 5px;
-   border: solid 1px rgb(212, 212, 212);
+    border: solid 1px rgb(212, 212, 212);
     border-top: none;
 }
+
 .hash_list p {
     margin: 5px;
-    font-weight:400;
+    font-weight: 400;
     color: rgb(80, 80, 80)
+}
 
-}
 .hash_list ul {
-   list-style: none;
-   padding: 0px;
-   width: 100%;
+    list-style: none;
+    padding: 0px;
+    width: 100%;
 }
-.hash_list ul li{
-     color: black;
-     display: flex;
-     flex-direction: column;
+
+.hash_list ul li {
+    color: black;
+    display: flex;
+    flex-direction: column;
     margin: 4px;
-border-bottom:  0.1px rgb(194, 194, 194) solid;
-  
+    border-bottom: 0.1px rgb(194, 194, 194) solid;
+
 }
 
 .hash_carrousel_imgs {
-padding: 5px;
-margin: 5px 0px;
-width: 20%;
+    padding: 5px;
+    margin: 5px 0px;
+    width: 20%;
 
 }
-.hash_carrousel_imgs ul{
-        display: flex;
-        list-style: none;
-        align-items: center;
-    width: 100%;
-    
-} 
-.hash_carrousel_imgs ul li{
+
+.hash_carrousel_imgs ul {
     display: flex;
-     list-style: none;
-     width: 80px;
-     height: 80px;
-     border: white 1px solid;
-   
+    list-style: none;
+    align-items: center;
+    width: 100%;
+
+}
+
+.hash_carrousel_imgs ul li {
+    display: flex;
+    list-style: none;
+    width: 80px;
+    height: 80px;
+    border: white 1px solid;
+
 }
 
 
 .carrousel_img {
     display: flex;
     justify-content: center;
-   max-width: 100%;
-  height: auto;
-  object-fit: contain;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
-.p_loading{
+.p_loading {
     font-size: .8em;
     color: crimson;
 }
-
-
-.profile_writer{
-        width: 10%;
-    display: flex;
-    justify-content: center;
-    border-radius: 25px;
-    background-color: rgb(255, 255, 255);
-    border-bottom-right-radius: 0px;
-    border-top-right-radius: 0px;
-    padding: 5px;
-          border: solid 1px rgb(212, 212, 212);
-          border-right: none;
-}
-
 
 
 .form_writer {
@@ -141,9 +131,9 @@ width: 20%;
     border-radius: 25px;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
- padding: 5px;
-       border: solid 1px rgb(212, 212, 212);
-       border-left: none;
+    padding: 5px;
+    border: solid 1px rgb(212, 212, 212);
+    border-left: none;
 }
 
 
@@ -153,7 +143,7 @@ width: 20%;
     margin: 2px;
     background-color: rgb(255, 255, 255);
     border-radius: 25px;
-    
+
 }
 
 .submit_box_post {
@@ -163,10 +153,7 @@ width: 20%;
     padding: 0px 2px;
 }
 
-.userprof_writer {
-    padding: 5px;
 
-}
 
 .avatar_profile {
     width: 40px;
@@ -177,20 +164,21 @@ width: 20%;
     margin-top: 20px;
 }
 
-.inputs_hash{
+.inputs_hash {
 
     border-top: 5px;
     width: 75%;
-      font-size: .7em;
-     background-color: whitesmoke;
-      border-bottom: none;
-  border-radius: 20px;
-  padding: 10px;
+    font-size: .7em;
+    background-color: whitesmoke;
+    border-bottom: none;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .inputs_hash:focus {
     border: 1px solid rgb(16, 155, 236);
 }
+
 .btn_up_image {
     display: flex;
     flex-direction: row;
@@ -198,13 +186,15 @@ width: 20%;
     border-top: 5px;
     width: 70%;
     padding: 4px 0px;
-     background-color: whitesmoke;
-  border-radius: 20px;
-  padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 10px;
 }
+
 .btn_up_image input:focus {
-        border-bottom: 2px solid rgb(16, 155, 236);
+    border-bottom: 2px solid rgb(16, 155, 236);
 }
+
 .Inp_imageurl {
     font-size: .6em;
     padding: 2px;
@@ -212,7 +202,7 @@ width: 20%;
     margin: 0px;
     border-bottom: black 0, 3px solid;
     margin-left: 5px;
-  padding: 10px;
+    padding: 10px;
 
 }
 
@@ -227,7 +217,7 @@ width: 20%;
 }
 
 .submit_box_post input {
- 
+
     width: 100px;
     height: 40px;
     margin-right: 5px;
@@ -252,10 +242,12 @@ width: 20%;
     background: radial-gradient(circle, dodgerblue, rgba(2, 255, 255, 0.911));
     animation: moments 10s ease infinite;
 }
+
 .submit_box_post .disabled_submit {
-  background: radial-gradient(circle, rgb(107, 107, 107), rgb(206, 206, 206));
-  color: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgb(107, 107, 107), rgb(206, 206, 206));
+    color: rgb(255, 255, 255);
 }
+
 .error {
     display: flex;
     justify-content: center;
@@ -263,8 +255,8 @@ width: 20%;
 }
 
 .error p {
-    
-    
+
+
     margin-right: 5px;
     border-width: 1px;
     border-color: rgb(214, 214, 214);
@@ -273,7 +265,7 @@ width: 20%;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 
-    
+
     color: rgb(214, 27, 27);
     font-weight: 500;
     font-size: .6em;
@@ -298,7 +290,7 @@ width: 20%;
     }
 }
 
- .button_tag {
+.button_tag {
     display: flex;
     justify-content: center;
     color: black;
@@ -314,17 +306,3 @@ width: 20%;
     padding: 5px;
     margin: 5px;
 }
-
-.perf_rounded {
-   border-radius: 100%;
-   background-color: rgb(193, 193, 193);
-   color: white;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 35px;
-   height: 35px;
-   border: 3px solid  rgba(164, 164, 164, 0.511);
-}
-
-.perf_rounded span {margin: 0px; padding: 0px;}

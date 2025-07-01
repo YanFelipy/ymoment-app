@@ -13,7 +13,7 @@ import { useNavigate, Link } from 'react-router-dom'
 import { useAuthValue } from '../../../context/AuthContext'
 import { useFetchDocuments } from '../../hooks/useFetchDocument';
 import { useInsertDocument } from '../../hooks/useInsertDocument'
-import { useFilterTags} from '../../hooks/useFilterTags'
+import { useFilterTags } from '../../hooks/useFilterTags'
 // import { useQuery } from '../../hooks/useQuery'
 
 
@@ -34,33 +34,29 @@ const Dashboard = () => {
   const [formError, setFormError] = useState("")
 
   // MOST USED TAGS : 
-  const findTags = posts && posts.map( (post) => {
-  let newArray = []
-  
-  post.tagsArray.map(((tags) => {
-    newArray.push(tags)
-  })) 
-  return newArray
-})
+  const findTags = posts && posts.map((post) => {
+    let newArray = []
 
+    post.tagsArray.map(((tags) => {
+      newArray.push(tags)
+    }))
+    return newArray
+  })
 
+  let findTagsString = findTags && findTags.toString()
+  let allTags = findTagsString && findTagsString.split(",").map(item => item.trim())
+  const repeated = findRepeatedValues(allTags)
 
-let findTagsString = findTags &&  findTags.toString()
-let allTags = findTagsString && findTagsString.split(",").map(item =>item.trim() )
-const repeated = findRepeatedValues(allTags)
-
-//const xRepeatedValues1 = countTags(allTags,repeated[0]) 
-//const xRepeatedValues2 = countTags(allTags,repeated[1]) 
-//const xRepeatedValues3 = countTags(allTags,repeated[2]) 
-
-
+  //const xRepeatedValues1 = countTags(allTags,repeated[0]) 
+  //const xRepeatedValues2 = countTags(allTags,repeated[1]) 
+  //const xRepeatedValues3 = countTags(allTags,repeated[2]) 
 
   //SUBMITING SEARCH TAGS
-    const handleSearch = (event) =>  {
+  const handleSearch = (event) => {
     let tagQuery = event.target.lastChild.textContent
-     
-     navigate(`/search?q=${tagQuery}`)
-    }
+
+    navigate(`/search?q=${tagQuery}`)
+  }
 
   //SUBMITING POSTS
 
@@ -97,8 +93,8 @@ const repeated = findRepeatedValues(allTags)
 
     setBody("")
     setImage("")
-    setTags("")   
-     setFormError("* A imagem precisa ser uma URL ")
+    setTags("")
+    setFormError("* A imagem precisa ser uma URL ")
 
     navigate("/")
   }
@@ -109,9 +105,7 @@ const repeated = findRepeatedValues(allTags)
       <div className={styles.pf_container}>
 
         <div className={styles.box_post}>
-     
-               <UserDetails user={user}/>
-
+          <UserDetails user={user} />
           <div className={styles.form_writer}>
 
             <form onSubmit={handleSubmitPost} className={styles.post_form}>
@@ -162,7 +156,7 @@ const repeated = findRepeatedValues(allTags)
         </div>
 
         <div className={styles.box_feed}>
-         
+
           {loading && <p className={styles.p_loading}>Carregando posts...</p>}
           {posts && posts.map((post) => (
             <PostDetails key={post.id} post={post} desc={"Ler mais"} link={`/posts/${post.id}`} />
@@ -183,24 +177,24 @@ const repeated = findRepeatedValues(allTags)
           <div className={styles.hash_list}>
 
             <ul className={styles.trending_list}>
-{ repeated && repeated.map(((hashtag)=> (
-    <li key={hashtag.id} className={styles.li_link_tag}>
-      <button key={hashtag} onClick={handleSearch} className={styles.button_tag}>
-                                    <p>#{hashtag}</p>
-                   
-                            </button> 
-      
-                
-                <div className={styles.hash_carrousel_imgs}>
+              {repeated && repeated.map(((hashtag) => (
+                <li key={hashtag.id} className={styles.li_link_tag}>
+                  <button key={hashtag} onClick={handleSearch} className={styles.button_tag}>
+                    <p>#{hashtag}</p>
 
-                </div>
-
-              </li>
-)))}
+                  </button>
 
 
+                  <div className={styles.hash_carrousel_imgs}>
 
-{/* 
+                  </div>
+
+                </li>
+              )))}
+
+
+
+              {/* 
               <li>
                 <p>#Sol</p>
                 <div className={styles.hash_carrousel_imgs}>
@@ -256,13 +250,8 @@ const repeated = findRepeatedValues(allTags)
 */}
 
             </ul>
-
           </div>
-
         </div>
-
-
-
       </div>
 
 

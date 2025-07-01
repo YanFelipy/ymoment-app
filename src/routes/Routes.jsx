@@ -15,37 +15,37 @@ import { useAuthValue } from '../../context/AuthContext'
 
 const RoutesPages = () => {
 
-  const {user} = useAuthValue()
-  
+  const { user } = useAuthValue()
+
   return (
     <Routes>
-      
-<Route path='/' element={user ?  
-<Dashboard/> :<Login/>
-} />
 
-<Route path='/login' element={user ?  
-<Dashboard/> :<Login/>
-}/>
+      <Route path='/' element={user ?
+        <Dashboard /> : <Login />
+      } />
 
-<Route path='/search' element={user ?  
-<Search/> :<Login/>
-}/>
+      <Route path='/login' element={user ?
+        <Dashboard /> : <Login />
+      } />
 
-<Route path='/profile_posts' element={user ?  
-<Home/> :<Login/>
-}/>
- <Route path='/posts/edit/:id' element={user ?  
-<EditPost /> :<Login/>
-}/>
-       <Route path='/Register' element={!user ?  
- <Register/> : <Dashboard/>
-}/>
+      <Route path='/search' element={user ?
+        <Search /> : <Login />
+      } />
 
-<Route path='/About' element={<About />} />
+      <Route path='/profile_posts' element={user ?
+        <Home /> : <Login />
+      } />
+      <Route path='/posts/edit/:id' element={user ?
+        <EditPost /> : <Login />
+      } />
+      <Route path='/Register' element={!user ?
+        <Register /> : <Dashboard />
+      } />
 
- <Route path='/posts/:postId' element={<Post />} />
- 
+      <Route path='/About' element={<About />} />
+
+      <Route path='/posts/:postId' element={<Post />} />
+
     </Routes>
 
   )

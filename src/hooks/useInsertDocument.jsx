@@ -5,8 +5,8 @@ import { db } from '../../firebase/config'
 
 
 const initialState = {
-    loading: null,
-    error: null
+  loading: null,
+  error: null
 }
 
 const insertReducer = (state, action) => {
@@ -29,7 +29,7 @@ export const useInsertDocument = (docCollection) => {
   const [cancelled, setCancelled] = useState(false);
 
   const checkCancelBeforeDispatch = (action) => {
-     
+
     if (!cancelled) {
       dispatch(action);
     } return () => setCancelled(true);
@@ -56,7 +56,7 @@ export const useInsertDocument = (docCollection) => {
   };
 
   //useEffect(() => {
-   // return () => setCancelled(true);
+  // return () => setCancelled(true);
   //}, []);
 
   return { insertDocument, response };

@@ -5,8 +5,8 @@ import { doc, deleteDoc } from 'firebase/firestore'
 
 
 const initialState = {
-    loading: null,
-    error: null
+  loading: null,
+  error: null
 }
 
 const deleteReducer = (state, action) => {
@@ -29,7 +29,7 @@ export const useDeleteDocument = (docCollection) => {
   const [cancelled, setCancelled] = useState(false);
 
   const checkCancelBeforeDispatch = (action) => {
-     
+
     if (!cancelled) {
       dispatch(action);
     } return () => setCancelled(true);
@@ -39,9 +39,9 @@ export const useDeleteDocument = (docCollection) => {
     checkCancelBeforeDispatch({ type: "LOADING" });
 
     try {
-      
 
-      const deletedDocument = await deleteDoc( doc(db,docCollection, id));
+
+      const deletedDocument = await deleteDoc(doc(db, docCollection, id));
 
       checkCancelBeforeDispatch({
         type: "DELETED_DOC",
@@ -53,7 +53,7 @@ export const useDeleteDocument = (docCollection) => {
   };
 
   //useEffect(() => {
-   // return () => setCancelled(true);
+  // return () => setCancelled(true);
   //}, []);
 
   return { deleteDocument, response };
